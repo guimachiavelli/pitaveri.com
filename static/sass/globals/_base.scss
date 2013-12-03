@@ -1,0 +1,113 @@
+@include establish-baseline($base-font-size);
+
+html, body, #wrapper {
+	font-family: $main-font;
+	background: $white;
+	@include adjust-leading-to(2);
+
+	height: 100%;
+	width: 100%;
+
+}
+
+html, body {
+    &:before, &:after {
+		content: ' ';
+		background: $white;
+		position: fixed;
+		display: block;
+		z-index: 5000;
+	}
+	
+	&:before {
+		height:20px;
+    	left:0;
+		right:0;
+	}
+
+	&:after {
+		width: 20px;
+		top:0;
+		bottom:0;
+	}
+
+}
+
+html {
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
+}
+
+body {
+	&:before {
+		bottom: 0;
+	}
+
+	&:after {
+		left: 0;
+	}
+}
+
+
+
+#wrapper {
+	
+	padding: 20px;
+	position: relative;
+}
+
+.main-content {
+	height: 100%;
+	width: 100%;
+}
+
+img {
+	width: 100%;
+	max-height: 100%;
+}
+
+figure, div div, article {
+	min-height: 500px;
+	width: 100%;
+	max-width: 100%;
+	@include box-sizing(border-box);
+	//position: relative;
+	background: #fff;
+	display: block;
+}
+
+div  div {
+	z-index: 100;
+	min-height: 400px;
+	padding: 50px;
+	@include box-sizing(border-box);
+}
+
+h1, nav {
+	position: absolute
+}
+
+nav {
+	position: fixed;
+	z-index: 100;
+}
+
+.regular {
+	padding: 50px 150px;
+}
+
+.detail {
+	margin-bottom: 70px;
+//	padding: 50px 0;
+	img{
+		position: fixed;
+	}
+}
+
+
+

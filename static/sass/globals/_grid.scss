@@ -1,0 +1,34 @@
+/*********************************************
+/*****************************
+
+	Basic Grid settings
+
+/*****************************
+*********************************************/
+
+$total-columns  : 15;
+$column-width   : 50px;
+$gutter-width   : 20px;
+$grid-padding   : 60px;
+$container-style: fluid;
+
+$show-grid-backgrounds: true;
+
+/*********************************************
+/*****************************
+
+	Typography settings
+
+/*****************************
+*********************************************/
+
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300);
+//@import url('//f.fontdeck.com/s/css/uH5+KWQnibDTJRYggGJ9XZLTAgw/gui.local/39198.css');
+
+@import url(http://fonts.googleapis.com/css?family=Averia+Sans+Libre:700,700italic);
+
+$main-font: 'Averia Sans Libre', serif;
+$sub-font: Georgia, serif;
+
+$base-font-size: 12px;
+$base-line-height: 10px;
