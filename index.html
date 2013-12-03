@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+		<title>Pitaveri</title>
+		<meta name="description" content="Filippo Taveri's Portfolio">
+	
+		<meta name="viewport" content="width=device-width">
+		<link href='http://fonts.googleapis.com/css?family=Averia+Libre' rel='stylesheet'>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			html, body {
+				height: 100%;
+				width: 100%;
+				background: transparent url('bg1.jpg') no-repeat 0 0%;
+
+			}
+
+			body {
+				background: #111;
+				border: 20px solid #fff;
+				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+				-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+				box-sizing: border-box;
+				padding: 50px;
+				background: transparent url('bg1.jpg') no-repeat 0 0%;
+				-webkit-background-size: cover;
+				background-size: cover;
+
+				transform:translate(0, 1px);
+				-moz-transform:translate(0, 1px);
+				-ms-transform:translate(0, 1px);
+				-webkit-transform:translate(0, 1px);
+				-o-transform:translate(0, 1px);
+			}
+
+			h1, h2 {
+				font-family: 'Averia Libre', sans-serif;
+				font-size: 45px;
+				color: #fff;
+			}
+
+			h1 {
+				margin: 10% 0 50px 0;
+			}
+		</style>
+	
+	</head>
+	<body>
+		<h1 id="soon">website coming soon</h1>
+		<h2 id="pdf">please write to pitaveri [at] gmail [dot] com for a pdf portfolio or in case you have any questions</h2>
+
+		<script>
+			var i = 1,
+				max_i = 18,
+				loaded = false;
+
+			var loadImgs = function() {
+				if (loaded === false) {
+					for (var y = 1; y <= max_i; y++) {
+						var img = new Image();
+						img.src = 'bg' + y + '.jpg';
+						if (y === max_i) {
+							img.onload = function(){
+								loaded = true;
+							}
+						}
+					}
+				}
+			}
+
+			var loadImg = function() {
+				
+				loadImgs();
+				var bg = 'bg' + i + '.jpg';
+				if (loaded === true) {
+					if (i < max_i) {
+						document.body.style.backgroundImage = 'url(' + bg + ')';
+						i += 1;
+					} else {
+						i = 1;
+						document.body.style.backgroundImage = 'url(' + bg + ')';
+					}
+				}
+				
+			}
+
+			var stop = function(){
+				window.clearInterval(changeImg)
+			}
+
+			var begin = function(){
+				changeImg = setInterval(loadImg, 700);
+			}
+
+
+			window.onload = function(){
+				
+				begin();
+
+				document.getElementById('soon').onmouseover = stop;
+				document.getElementById('pdf').onmouseover = stop;
+
+				document.getElementById('soon').onmouseout = begin;
+				document.getElementById('pdf').onmouseout = begin;
+
+			
+			};
+		</script>
+	</body>
+</html>
