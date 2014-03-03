@@ -6,12 +6,12 @@ require(['jquery', 'modules/image-cover', 'modules/menu-color'], function($,imag
 
 
 	$(document).ready(function() {
-		$('*').css('outline','1px solid transparent');
-		imageCover($('.detail'));
+		//$('*').css('outline','1px solid transparent');
+		//imageCover($('.detail'));
 
-		$(document).on('scroll', function(){
-			toggleMenuColor();
-		});
+		//$(document).on('scroll', function(){
+			//toggleMenuColor();
+		//});
 
 
 	});
