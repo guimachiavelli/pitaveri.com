@@ -1,3 +1,43 @@
 #primary-nav {
+	position: relative;
 
+	&.white {
+		a {
+			color: #fff;
+		}
+	}
+}
+
+#primary-nav ul {
+	position: fixed;
+	z-index: 10;
+	top: rhythm();
+	width: calc(100% - 40px);
+	padding: 20px 40px;
+	@include box-sizing(border-box);
+}
+
+.menu-item {
+	float: left;
+	text-decoration: underline;
+	text-transform: lowercase;
+	width: 33%;
+	@include adjust-font-size-to(28px);
+
+	&:nth-child(2n) {
+		text-align: center;
+		margin-left: .5%;
+	}
+
+	&:last-child {
+		float: right;
+		text-align: right;
+	}
+
+}
+
+
+a {
+	color: #000;
+	
 }
