@@ -71,7 +71,8 @@ a, p {
 }
 
 
-
-
-
-
+a {
+	display: inline-block;
+	border-bottom: 1px solid $text-color;
+	line-height: 1;
+}

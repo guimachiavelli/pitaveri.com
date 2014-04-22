@@ -35,12 +35,12 @@
 			<article class="main-content">
 
 				<h1 class="project-title">Osservatorio didattica educazione 2013/02</h1>
-				<figure class="detail project-image">
+				<figure class="detail project-image featured-image">
 					<img src="<?php echo TEMPLATE_URL; ?>/placeholder/detail1.jpg" alt="osservatorio">
 				</figure>
 
 				<div class="description">
-					<p>Basic bookbinding manual focused on the use of recycled materials and makeshift tools. The publication has been written and designed after a series of workshops held towards the end of 2011 in Bari. Afterwards, we replicated the workshop around Italy, and actively improve the course and promote it in other venues.</p>
+					<p>Basic <a class="test-link" href="#">bookbinding</a> manual focused on the use of recycled materials and makeshift tools. The publication has been written and designed after a series of workshops held towards the end of 2011 in Bari. Afterwards, we replicated the workshop around Italy, and actively improve the course and promote it in other venues.</p>
 				</div>
 
 				<figure class="regular  project-image">

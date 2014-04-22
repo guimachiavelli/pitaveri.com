@@ -4,6 +4,7 @@
 	&.white {
 		a {
 			color: #fff;
+			border-bottom-color: $white;
 		}
 	}
 }
@@ -22,7 +23,7 @@
 	text-decoration: underline;
 	text-transform: lowercase;
 	width: 33%;
-	@include adjust-font-size-to(28px);
+	@include adjust-font-size-to(25px);
 
 	&:nth-child(2n) {
 		text-align: center;
