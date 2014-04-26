@@ -27,7 +27,6 @@
 			<img src="<?php echo TEMPLATE_URL; ?>/placeholder/regular1.jpg" alt="osservatorio">
 		</figure>
 
-
 	</article>
 
 <?php get_footer(); ?>
