@@ -15,38 +15,68 @@
 	height: 100%;
 	width: 100%;
 	position: relative;
-}
 
-.description, .project-image {
-	width: 100%;
-	display: block;
-	margin-top: rhythm(8);
-	padding: 0 20%;
-	font-weight: 700;
-	@include box-sizing(border-box);
-	@include adjust-font-size-to(32px);
+	p, .project-image {
+		width: 100%;
+		display: block;
+		margin-top: rhythm(8);
+		padding: 0 20%;
+		font-weight: 700;
+		@include box-sizing(border-box);
+		@include adjust-font-size-to(32px);
+
+		&:last-child {
+			margin-bottom: rhythm(8);
+		}
+
+	}
+	
+	.project-image {
+		padding: 0 15%;
+		line-height: 0;
+	}
+
+	.detail {
+		padding: 0;
+		height: 105%;
+		background-attachment: fixed;
+		@include background-size(cover);
+
+		img {
+			height: 0;
+		}
+
+		&.featured-image {
+			margin-top: 0;
+		}
+	}
 
 	img {
 		width: 100%;
 	}
 
-	&:last-child {
-		margin-bottom: rhythm(8);
-	}
 }
 
-.project-image {
-	padding: 0 13%;
-	line-height: 0;
+
+.project-footer {
+	margin: rhythm(8) 40px rhythm(4) 40px;
+	height: rhythm(2);
+	position: relative;
 }
 
-.detail {
-	height: 100%;
-	background-attachment: fixed;
-	@include background-size(cover);
-
-	&.featured-image {
-		margin-top: 0;
-	}
+.project-nav-link {
+	position: absolute;
+	top: 0;
+	@include adjust-font-size-to(24px);
 }
+
+.project-next {
+	left: 0;
+}
+
+.project-prev {
+	right: 0;
+}
+
+
 

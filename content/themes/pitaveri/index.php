@@ -1,32 +1,33 @@
 <?php get_header(); ?>
 
+
+<?php
+	if (have_posts()) {
+		while (have_posts()) {
+
+		the_post();
+?>
 	<article class="main-content">
 
-		<h1 class="project-title">Osservatorio didattica educazione 2013/02</h1>
+		<h1 class="project-title"><?php the_title(); ?> <?php the_time('Y/m') ?></h1>
+
 		<figure class="detail project-image featured-image">
-			<img src="<?php echo TEMPLATE_URL; ?>/placeholder/detail1.jpg" alt="osservatorio">
+			<?php the_post_thumbnail('full'); ?>
 		</figure>
 
-		<div class="description">
-			<p>Basic <a class="test-link" href="#">bookbinding</a> manual focused on the use of recycled materials and makeshift tools. The publication has been written and designed after a series of workshops held towards the end of 2011 in Bari. Afterwards, we replicated the workshop around Italy, and actively improve the course and promote it in other venues.</p>
-		</div>
+		<?php the_content(); ?>
 
-		<figure class="regular  project-image">
-			<img src="<?php echo TEMPLATE_URL; ?>/placeholder/regular1.jpg" alt="osservatorio">
-		</figure>
-
-		<figure class="regular project-image">
-			<img src="<?php echo TEMPLATE_URL; ?>/placeholder/regular2.jpg" alt="osservatorio">
-		</figure>
-
-		<figure class="detail project-image">
-			<img src="<?php echo TEMPLATE_URL; ?>/placeholder/detail2.jpg" alt="osservatorio">
-		</figure>
-
-		<figure class="regular project-image">
-			<img src="<?php echo TEMPLATE_URL; ?>/placeholder/regular1.jpg" alt="osservatorio">
-		</figure>
+		<footer class="project-footer">
+			<ul>
+				<li class="project-nav-link project-next"><?php next_post_link('< %link'); ?></li>
+				<li class="project-nav-link project-prev"><?php previous_post_link('%link >'); ?></li>
+			</ul>
+		</footer>
 
 	</article>
+<?php
+		}
+	}
+?>
 
 <?php get_footer(); ?>
