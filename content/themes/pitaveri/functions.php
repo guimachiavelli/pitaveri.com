@@ -1,3 +1,5 @@
 <?php
 
-	require_once 'includes/globals.php';
+	get_template_part('includes/globals');
+	get_template_part('includes/settings');
+
