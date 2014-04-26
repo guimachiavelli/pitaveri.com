@@ -18,13 +18,14 @@
 
 		public static function detail_field( $fields, $post ) {
 			$meta = get_post_meta($post->ID, 'meta_link', true);
+			$meta = $meta ? 'checked' : '';
 			$field = array();
 			$field['detail_image'] = array(
 				'label' => 'Detail',
 				'input' => 'html',
 				'value' => $meta,
 				'show_in_edit' => true,
-				'html' => "<input type='checkbox' value='detail' name='attachments[{$post->ID}]['detail_image']'id='attachments[{$post->ID}][detail_image]' />"
+				'html' => "<input type='checkbox' {$meta} value='detail' name='attachments[{$post->ID}]['detail_image']'id='attachments[{$post->ID}][detail_image]' />"
 			);
 			return $field;
 		}
