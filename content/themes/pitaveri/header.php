@@ -21,7 +21,7 @@
 		<script data-main="<?php echo TEMPLATE_URL; ?>/js/pitaveri-main" src="<?php echo TEMPLATE_URL; ?>/js/libs/require.min.js"></script>
 	</head>
 
-	<body class="projects">
+	<body <?php body_class(); ?>>
 
 		<?php get_template_part('nav'); ?>
 

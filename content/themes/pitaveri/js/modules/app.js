@@ -9,9 +9,11 @@ require(['jquery', 'modules/image-cover', 'modules/menu-color'], function($,imag
 		$('*').css('outline','1px solid transparent');
 		imageCover($('.detail'));
 
+	if ($('body').hasClass('single') || $('body').hasClass('home')) {
 		$(document).on('scroll', function(){
 			toggleMenuColor();
 		});
+	}
 
 
 	});
