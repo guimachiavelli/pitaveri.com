@@ -1,8 +1,7 @@
 @include establish-baseline($base-font-size);
 
 html,
-body,
-#wrapper {
+body {
 	background: $white;
 	font-family: $main-font;
 	height: 100%;
@@ -11,6 +10,9 @@ body,
 	@include box-sizing(border-box);
 }
 
+body.page {
+	height: auto;
+}
 /*html,*/
 /*body {*/
 	/*@include box-sizing(border-box);*/

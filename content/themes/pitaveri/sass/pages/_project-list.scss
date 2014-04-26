@@ -1,0 +1,55 @@
+.page {
+	
+}
+
+.project-list {
+	width: 100%;
+	margin-top: rhythm(10);
+}
+
+.project-list-item {
+	margin: 0 0 rhythm() 40px;
+	float: left; 
+    clear: left; 
+	
+	a {	border: 0; }
+
+	&:hover {
+		a {	color: $white; }
+		.project-list-title { border-bottom-color: $white; }
+		.project-list-image { display: block; }
+	}
+
+}
+
+.project-list-head {
+	position: relative;
+	z-index: 2;
+}
+
+.project-list-title {
+	@include adjust-font-size-to(48px);
+	line-height: 1;
+	margin-left: .5em;
+	display: inline-block;
+	border-bottom: 1px solid $text-color;
+
+}
+
+.project-list-date {
+	@include adjust-font-size-to(28px);
+	display: inline;
+}
+
+.project-list-image {
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 0;
+	display: none;
+	pointer-events: none;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
