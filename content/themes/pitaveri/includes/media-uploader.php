@@ -10,11 +10,10 @@
 		}
 
 		public static function disable_fields() {
-
-				echo '	<style type="text/css">
-							.attachment-details .setting,
-							.attachment-display-settings { display:none !important; }
-						</style>';
+			echo '	<style type="text/css">
+						.attachment-details .setting,
+						.attachment-display-settings { display:none !important; }
+					</style>';
 		}
 
 		public static function detail_field( $fields, $post ) {
@@ -32,17 +31,16 @@
 
 		public static function detail_field_update($attachment){
 			global $post;
-			update_post_meta($post->ID, 'meta_link', $attachment['attachments'][$post->ID]['meta_link']);
+			update_post_meta($post->ID, 'detail_image', $attachment['attachments'][$post->ID]['detail_image']);
 			return $attachment;
 		}
 
 		public static function detail_field_ajax() {
 			$post_id = $_POST['id'];
-			$meta = $_POST['attachments'][$post_id ]['meta_link'];
-			update_post_meta($post_id , 'meta_link', $meta);
+			$meta = $_POST['attachments'][$post_id ]['detail_image'];
+			update_post_meta($post_id , 'detail_image', $meta);
 			clean_post_cache($post_id);
 		}
 	}
-
 
 	P_Detail_Image::init();
