@@ -33,7 +33,7 @@
 	// Removes from admin menu
 	add_action('admin_menu', 'remove_comments');
 	function remove_comments() {
-		//if (p_is_admin_user()) return;
+		if (p_is_admin_user()) return;
 		remove_menu_page('edit-comments.php');
 		remove_menu_page('edit.php?post_type=page');
 		remove_menu_page('upload.php');
