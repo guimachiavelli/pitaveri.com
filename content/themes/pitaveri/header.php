@@ -13,12 +13,8 @@
 
 		<meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="<?php echo TEMPLATE_URL; ?>/css/pitaveri-main.css">
-
 		<?php wp_head(); ?>
 
-		<script src="<?php echo TEMPLATE_URL; ?>/js/libs/modernizr.js"></script>
-		<script data-main="<?php echo TEMPLATE_URL; ?>/js/pitaveri-main" src="<?php echo TEMPLATE_URL; ?>/js/libs/require.min.js"></script>
 	</head>
 
 	<body <?php body_class(); ?>>

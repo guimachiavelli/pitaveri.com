@@ -1,9 +1,9 @@
 <?php
-
-	get_template_part('includes/globals');
-	get_template_part('includes/settings');
-	get_template_part('includes/helpers');
-	get_template_part('includes/images');
-	get_template_part('includes/media-uploader');
+	require_once get_template_directory() . '/includes/globals.php';
+	require_once TEMPLATE_DIR . '/includes/settings.php';
+	require_once TEMPLATE_DIR . '/includes/helpers.php';
+	require_once TEMPLATE_DIR . '/includes/images.php';
+	require_once TEMPLATE_DIR . '/includes/assets.php';
+	require_once TEMPLATE_DIR . '/includes/media-uploader.php';
 
 
