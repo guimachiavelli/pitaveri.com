@@ -23,16 +23,13 @@
 
 	add_action('admin_menu', 'add_about_page_to_menu');
 	function add_about_page_to_menu() {
-		$about_page = p_get_about_page_id();
-		if (!$about_page) return;
-		add_menu_page('About', 'About', 'edit_pages', "post.php?post={$about_page}&action=edit", '', 'dashicons-media-text', 10);
+		$about_page_id = p_get_about_page_id();
+		if (!$about_page_id) return;
+		add_menu_page('About', 'About', 'edit_pages', "post.php?post={$about_page_id}&action=edit", '', 'dashicons-media-text', 10);
 	}
 
-
-
-	// Removes from admin menu
-	add_action('admin_menu', 'remove_comments');
-	function remove_comments() {
+	add_action('admin_menu', 'remove_menus');
+	function remove_menus() {
 		if (p_is_admin_user()) return;
 		remove_menu_page('edit-comments.php');
 		remove_menu_page('edit.php?post_type=page');

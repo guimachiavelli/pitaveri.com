@@ -1,0 +1,21 @@
+.main-content--page {
+	margin-top: rhythm(12);
+}
+
+.page-title {
+	margin-left: 40px;
+	font-weight: 800;
+	@include adjust-font-size-to(32px);
+}
+
+.page-content {
+	margin-top: rhythm(4, 32px);
+	margin-left: 40px;
+	font-weight: 800;
+	max-width: 700px;
+
+	p {
+		margin-top: rhythm(2);
+		padding: 0;
+	}
+}
