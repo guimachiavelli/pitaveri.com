@@ -41,6 +41,7 @@
 		height: 105%;
 		background-attachment: fixed;
 		@include background-size(cover);
+		backface-visibility: hidden;
 
 		img {
 			height: 0;
@@ -49,6 +50,10 @@
 		&.featured-image {
 			margin-top: 0;
 		}
+	}
+
+	.detail + .detail {
+		margin-top: 0;
 	}
 
 	img {
