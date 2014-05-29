@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<ul class="project-list">
 		<?php
-			query_posts('post-type=post&posts_per_page=-1');
+			query_posts('post_type=project&posts_per_page=-1');
 			while (have_posts()) {
 				the_post();
 		?>

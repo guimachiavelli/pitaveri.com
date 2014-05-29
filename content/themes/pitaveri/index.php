@@ -2,9 +2,12 @@
 
 
 <?php
+	global $query_string;
+	$args = array_merge($wp_query->query_vars, array('post_type' => 'project', 'orderby' => 'rand'));
+	query_posts($args);
+
 	if (have_posts()) {
 		while (have_posts()) {
-
 		the_post();
 ?>
 	<article class="main-content">

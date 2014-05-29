@@ -6,5 +6,6 @@
 	require_once TEMPLATE_DIR . '/includes/images.php';
 	require_once TEMPLATE_DIR . '/includes/assets.php';
 	require_once TEMPLATE_DIR . '/includes/media-uploader.php';
+	require_once TEMPLATE_DIR . '/includes/register-project.php';
 
 
