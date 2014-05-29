@@ -30,7 +30,7 @@
 
 	add_action('admin_menu', 'remove_menus');
 	function remove_menus() {
-		//if (p_is_admin_user()) return;
+		if (p_is_admin_user()) return;
 		remove_menu_page('edit.php');
 		remove_menu_page('edit-comments.php');
 		remove_menu_page('edit.php?post_type=page');
