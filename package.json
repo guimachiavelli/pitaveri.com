@@ -1,0 +1,16 @@
+{
+  "name": "pitaveri",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-contrib-compass": "^0.7.2",
+    "matchdep": "~0.3.0",
+    "grunt": "^0.4.4"
+  },
+  "author": "gui machiavelli",
+  "license": "MIT"
+}
+
