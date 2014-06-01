@@ -1,14 +1,21 @@
 .project-title {
-	color: #fff;
 	position: absolute;
+	color: #fff;
 	z-index: 10;
 	top: 50%;
-	left: 50%;
-	width: 50%;
-	height: 50%;
-	margin-left: -30%;
-	margin-top: -10%;
-	@include adjust-font-size-to(90px, 8);
+	margin-left: 40px;
+	@include adjust-font-size-to(60px, 6);	
+
+
+	@include breakpoint($breakpoint-s) {
+		@include adjust-font-size-to(90px, 8);
+		left: 50%;
+		width: 50%;
+		height: 50%;
+		margin-left: -30%;
+		margin-top: -10%;
+	}
+
 }
 
 .main-content {
