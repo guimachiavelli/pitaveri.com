@@ -44,8 +44,8 @@
 		remove_menu_page('options-general.php');
 	}
 
-	add_action('admin_menu', 'p_remove_collapse');
-	function p_remove_collapse() {
+	add_action('admin_init', 'p_remove_collapse');
+    function p_remove_collapse() {
 		echo '<style>#collapse-menu { display: none; }</style>';
 	}
 
