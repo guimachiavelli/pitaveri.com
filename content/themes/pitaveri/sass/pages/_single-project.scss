@@ -48,7 +48,8 @@
 		height: 105%;
 		background-attachment: fixed;
 		@include background-size(cover);
-		backface-visibility: hidden;
+		/*backface-visibility: hidden;*/
+		/*-webkit-backface-visibility: hidden;*/
 
 		img {
 			height: 0;

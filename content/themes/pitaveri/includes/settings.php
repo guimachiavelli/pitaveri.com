@@ -13,7 +13,7 @@
 
 	function p_post_image_defaults() {
 		update_option('image_default_link_type', 'none');
-		update_option('image_default_size', 'full');
+		update_option('image_default_size', 'large');
 	}
 
 	function p_remove_taxonomies(){
@@ -25,7 +25,7 @@
 	function add_about_page_to_menu() {
 		$about_page_id = p_get_about_page_id();
 		if (!$about_page_id) return;
-		add_menu_page('About', 'About', 'edit_pages', "post.php?post={$about_page_id}&action=edit", '', 'dashicons-media-text', 10);
+		add_menu_page('About', 'About', 'edit_pages', "post.php?post={$about_page_id}&action=edit", '', 'dashicons-media-text', 11);
 	}
 
 	add_action('admin_menu', 'remove_menus');
@@ -44,7 +44,7 @@
 		remove_menu_page('options-general.php');
 	}
 
-	add_action('admin_init', 'p_remove_collapse');
+	add_action('admin_head', 'p_remove_collapse');
     function p_remove_collapse() {
 		echo '<style>#collapse-menu { display: none; }</style>';
 	}
