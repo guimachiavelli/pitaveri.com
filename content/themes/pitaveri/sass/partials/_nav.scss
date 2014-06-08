@@ -28,6 +28,11 @@
 		width: 100%;
 		position: absolute;
 
+		a {
+			position: relative;
+			z-index: 1;
+		}
+
 		&:nth-child(2n) {
 			text-align: center;
 		}
