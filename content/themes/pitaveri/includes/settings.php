@@ -60,3 +60,8 @@
 		if (!$page) return;
 		return $page->ID;
 	}
+
+	function p_tiny_mce_full_width() {
+		add_editor_style('css/tiny-mce.css');
+	}
+	add_action('init', 'p_tiny_mce_full_width');
