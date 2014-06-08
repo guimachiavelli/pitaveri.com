@@ -25,6 +25,7 @@ var toggleMenuColor = function() {
 		$('#primary-nav').addClass('white');
 		return;
 	}
+
 	$('.detail').each(function(){
 		if ($(this).isOnScreen()) {
 			$('#primary-nav').addClass('white');
@@ -46,11 +47,11 @@ var imageCover = function($detail_img) {
 
 $(document).ready(function() {
 	//$('*').css('outline','1px solid transparent');
-	imageCover($('.detail'));
+	//imageCover($('.detail'));
 
 	if ($('body').hasClass('single') || $('body').hasClass('home')) {
 		$(document).on('scroll', function(){
-			toggleMenuColor();
+			//toggleMenuColor();
 		});
 	}
 });

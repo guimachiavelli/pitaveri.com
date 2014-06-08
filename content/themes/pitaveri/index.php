@@ -2,7 +2,6 @@
 
 
 <?php
-	global $query_string;
 	$args = array_merge($wp_query->query_vars, array('post_type' => 'project', 'orderby' => 'rand', 'posts_per_page' => 1));
 	query_posts($args);
 

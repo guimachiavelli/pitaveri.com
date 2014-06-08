@@ -45,14 +45,16 @@
 
 	.detail {
 		padding: 0;
-		height: 105%;
-		background-attachment: fixed;
-		@include background-size(cover);
+		
+		/*background-attachment: fixed;*/
+		/*@include background-size(cover);*/
+		/*@include translate3d(0);*/
 		/*backface-visibility: hidden;*/
 		/*-webkit-backface-visibility: hidden;*/
 
 		img {
-			height: 0;
+			width: 100%;
+			height: auto;
 		}
 
 		&.featured-image {
