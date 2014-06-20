@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 	if ($('body').hasClass('single') || $('body').hasClass('home')) {
 		$(document).on('scroll', function(){
-			//toggleMenuColor();
+			toggleMenuColor();
 		});
 	}
 });

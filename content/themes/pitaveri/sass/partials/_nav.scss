@@ -21,10 +21,9 @@
 .menu-item {
 	text-decoration: underline;
 	text-transform: lowercase;
-	@include adjust-font-size-to(25px,4);
+	@include adjust-font-size-to(22px,4);
 
 	@include breakpoint($breakpoint-s) {
-		@include adjust-font-size-to(25px,4);
 		width: 100%;
 		position: absolute;
 

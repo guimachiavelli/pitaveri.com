@@ -14,6 +14,8 @@
 	function p_post_image_defaults() {
 		update_option('image_default_link_type', 'none');
 		update_option('image_default_size', 'large');
+		update_option('large_size_w', 1280);
+		update_option('large_size_h', 0);
 	}
 
 	function p_remove_taxonomies(){

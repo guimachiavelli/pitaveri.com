@@ -8,12 +8,16 @@
 
 
 	@include breakpoint($breakpoint-s) {
-		@include adjust-font-size-to(90px, 8);
+		@include adjust-font-size-to(90px, 9);
 		left: 50%;
 		width: 50%;
 		height: 50%;
 		margin-left: -30%;
 		margin-top: -10%;
+	}
+
+	time {
+		display: block;
 	}
 
 }
@@ -74,7 +78,7 @@
 
 
 .project-footer {
-	margin: rhythm(8) 40px rhythm(4) 40px;
+	margin: rhythm(16) 40px rhythm(4) 40px;
 	height: rhythm(2);
 	position: relative;
 }
@@ -82,7 +86,7 @@
 .project-nav-link {
 	position: absolute;
 	top: 0;
-	@include adjust-font-size-to(24px);
+	@include adjust-font-size-to(22px);
 }
 
 .project-next {

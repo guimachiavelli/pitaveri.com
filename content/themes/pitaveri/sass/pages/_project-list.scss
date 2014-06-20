@@ -30,15 +30,17 @@
 .project-list-title {
 	@include adjust-font-size-to(48px);
 	line-height: 1;
-	margin-left: .5em;
+	margin-left: .35em;
 	display: inline-block;
 	border-bottom: 1px solid $text-color;
+	font-weight: 700;
 
 }
 
 .project-list-date {
-	@include adjust-font-size-to(28px);
+	@include adjust-font-size-to(48px);
 	display: inline;
+	font-weight: 700;
 }
 
 .project-list-image {
