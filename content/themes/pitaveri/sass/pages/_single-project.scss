@@ -49,15 +49,16 @@
 
 	.detail {
 		padding: 0;
+		height: 110%;
 		
-		/*background-attachment: fixed;*/
-		/*@include background-size(cover);*/
+		background-attachment: fixed;
+		@include background-size(cover);
 		/*@include translate3d(0);*/
 		/*backface-visibility: hidden;*/
 		/*-webkit-backface-visibility: hidden;*/
 
 		img {
-			width: 100%;
+			/*width: 100%;*/
 			height: auto;
 		}
 

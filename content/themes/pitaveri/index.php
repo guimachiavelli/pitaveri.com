@@ -14,7 +14,7 @@
 		<h1 class="project-title"><?php the_title(); ?> <time datetime="<?php the_time('Y-m') ?>"><?php the_time('Y/m') ?></time></h1>
 
 		<figure class="detail project-image featured-image">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail('large'); ?>
 		</figure>
 
 		<?php the_content(); ?>

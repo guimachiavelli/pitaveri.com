@@ -40,14 +40,17 @@ var imageCover = function($detail_img) {
 	$detail_img.each(function(){
 		var $image = $(this).find('img'),
 			image_src = $image.attr('src');
-		$(this).css('background-image', 'url("'+image_src+'")').find('img').remove();
+		//$(this).css('background-image', 'url("'+image_src+'")').find('img').remove();
+		$(this).attr('data-image', image_src).find('img').remove();
+		$(this).attr('data-cover-ratio', 1.1)
 	});
 };
 
 
 $(document).ready(function() {
 	//$('*').css('outline','1px solid transparent');
-	//imageCover($('.detail'));
+	imageCover($('.detail'));
+	$('.detail').imageScroll();
 
 	if ($('body').hasClass('single') || $('body').hasClass('home')) {
 		$(document).on('scroll', function(){
