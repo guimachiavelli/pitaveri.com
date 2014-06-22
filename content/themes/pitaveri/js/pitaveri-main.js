@@ -48,6 +48,7 @@ var imageCover = function($detail_img) {
 
 
 $(document).ready(function() {
+	//why the hell did I add this?
 	//$('*').css('outline','1px solid transparent');
 	imageCover($('.detail'));
 	$('.detail').imageScroll();
