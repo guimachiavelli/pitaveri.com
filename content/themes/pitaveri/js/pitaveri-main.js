@@ -16,8 +16,6 @@ $.fn.isOnScreen = function(){
 
 
 var toggleMenuColor = function() {
-
-
 	if ($(document).scrollTop() < $('.detail').height() - 55) {
 		$('#primary-nav').addClass('white');
 		return;
@@ -46,8 +44,6 @@ var imageCover = function($detail_img) {
 
 
 $(document).ready(function() {
-	//why the hell did I add this?
-	//$('*').css('outline','1px solid transparent');
 	if ($('html').hasClass('no-touch')) {
 		imageCover($('.detail'));
 	}
