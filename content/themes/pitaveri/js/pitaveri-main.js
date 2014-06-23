@@ -42,16 +42,18 @@ var imageCover = function($detail_img) {
 			image_src = $image.attr('src');
 		//$(this).css('background-image', 'url("'+image_src+'")').find('img').remove();
 		$(this).attr('data-image', image_src).find('img').remove();
-		$(this).attr('data-cover-ratio', 1.1)
+		$(this).attr('data-cover-ratio', 1.1);
 	});
+	$detail_img.imageScroll();
 };
 
 
 $(document).ready(function() {
 	//why the hell did I add this?
 	//$('*').css('outline','1px solid transparent');
-	imageCover($('.detail'));
-	$('.detail').imageScroll();
+	if ($('html').hasClass('no-touch')) {
+		imageCover($('.detail'));
+	}
 
 	if ($('body').hasClass('single') || $('body').hasClass('home')) {
 		$(document).on('scroll', function(){
