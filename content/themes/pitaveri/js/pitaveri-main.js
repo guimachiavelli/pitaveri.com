@@ -1,19 +1,17 @@
 $.fn.isOnScreen = function(){
-	var win, viewport, bounds;
+	var $window, viewport = {}, bounds = {}, winHeight, elHeight;
 
-	win = $(window);
+	$window = $(window);
+	winHeight = $window.height();
+	elHeight = this.height();
 
-	viewport = {
-		top : win.scrollTop(),
-	};
+	viewport.top = $window.scrollTop();
+	bounds.top = this.offset().top;
 
-	viewport.bottom = viewport.top + win.height() - this.height() + 55;
-
-	bounds = this.offset();
-	bounds.bottom = bounds.top + this.outerHeight() - 45;
+	viewport.bottom = viewport.top + winHeight - elHeight + 55;
+	bounds.bottom = bounds.top + elHeight - 45;
 
 	return !(viewport.bottom < bounds.top || viewport.top > bounds.bottom);
-
 };
 
 
@@ -27,7 +25,6 @@ var toggleMenuColor = function() {
 
 	$('.detail').each(function(){
 		if ($(this).isOnScreen()) {
-			console.log('on screen');
 			$('#primary-nav').addClass('white');
 			return false;
 		} else if (!$(this).isOnScreen()) {
