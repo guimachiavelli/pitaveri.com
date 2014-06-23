@@ -27,7 +27,8 @@
                 'public' => true,
                 'menu_position' => 5,
                 'supports' => array('title', 'editor', 'thumbnail'),
-                'menu_icon' => 'dashicons-book-alt'
+				'menu_icon' => 'dashicons-book-alt',
+				'rewrite' => array('slug' => 'project', 'with_front' => false)
             )
         );
     }

@@ -13,59 +13,6 @@ body {
 body.page {
 	height: auto;
 }
-/*html,*/
-/*body {*/
-	/*@include box-sizing(border-box);*/
-	/*&:before,*/
-	/*&:after {*/
-		/*background: $white;*/
-		/*content: ' ';*/
-		/*display: block;*/
-		/*position: fixed;*/
-		/*z-index: 100;*/
-	/*}*/
-	
-	/*&:before {*/
-		/*height: 20px;*/
-		/*left: 0;*/
-		/*right: 0;*/
-	/*}*/
-
-	/*&:after {*/
-		/*bottom: 0;*/
-		/*top: 0;*/
-		/*width: 20px;*/
-	/*}*/
-
-/*}*/
-
-/*html {*/
-	/*&:before {*/
-		/*top: 0;*/
-	/*}*/
-
-	/*&:after {*/
-		/*right: 0;*/
-	/*}*/
-/*}*/
-
-/*body {*/
-	/*&:before {*/
-		/*bottom: 0;*/
-	/*}*/
-
-	/*&:after {*/
-		/*left: 0;*/
-	/*}*/
-/*}*/
-
-
-
-/*#wrapper {*/
-	/*padding: 20px;*/
-	/*position: relative;*/
-	/*@include box-sizing(border-box);*/
-/*}*/
 
 a, p {
 	font-weight: 700;

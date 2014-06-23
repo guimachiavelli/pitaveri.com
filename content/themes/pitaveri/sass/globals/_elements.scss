@@ -10,7 +10,7 @@ a {
 	color: $link-color;
 	text-decoration: none;
 	@include transition-property(color);
-	@include transition-duration(.2s);
+	@include transition-duration(.1s);
 
 
 	&:hover  { 
