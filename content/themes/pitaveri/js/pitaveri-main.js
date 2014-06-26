@@ -39,7 +39,11 @@ var imageCover = function($detail_img) {
 		//$(this).css('background-image', 'url("'+image_src+'")').find('img').remove();
 		$(this).attr('data-image', image_src).find('img').remove();
 	});
-	$detail_img.imageScroll();
+	$detail_img.imageScroll({
+		coverRatio: 1,
+		speed: 0,
+		mediaWidth: 1400
+	});
 };
 
 
