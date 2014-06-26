@@ -16,7 +16,6 @@ body.page {
 
 a, p {
 	font-weight: 700;
-	
 }
 
 
@@ -24,4 +23,8 @@ a {
 	display: inline-block;
 	border-bottom: 1px solid $text-color;
 	line-height: 1;
+
+	&:hover {
+		border-color: transparent
+	}
 }

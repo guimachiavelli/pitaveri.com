@@ -29,16 +29,23 @@
 	p, .project-image {
 		width: 100%;
 		display: block;
-		margin-top: rhythm(4);
-		padding: 0 20%;
+		padding: 0 10%;
 		font-weight: 700;
+		margin-top: rhythm(5);
 		@include box-sizing(border-box);
-		@include adjust-font-size-to(32px);
+		@include adjust-font-size-to(26px);
 
 		&:last-child {
 			margin-bottom: rhythm(8);
 		}
+
+		@include breakpoint($breakpoint-s) {
+			@include adjust-font-size-to(32px);
+			padding: 0 20%;
+			margin-top: rhythm(4);
+		}
 	}
+
 
 	.project-image {
 		padding: 0 15%;

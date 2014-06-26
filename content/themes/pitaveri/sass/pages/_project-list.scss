@@ -1,6 +1,11 @@
 .project-list {
 	width: 100%;
-	margin-top: rhythm(10);
+	margin-top: rhythm(18);
+
+	@include breakpoint($breakpoint-s) {
+		margin-top: rhythm(10);
+	}
+
 }
 
 .project-list-item {
@@ -25,19 +30,28 @@
 }
 
 .project-list-title {
-	@include adjust-font-size-to(48px);
+	@include adjust-font-size-to(28px);
 	line-height: 1;
 	margin-left: .35em;
 	display: inline-block;
 	border-bottom: 1px solid $text-color;
 	font-weight: 700;
 
+	@include breakpoint($breakpoint-s) {
+		@include adjust-font-size-to(48px);
+	}
+
 }
 
 .project-list-date {
-	@include adjust-font-size-to(48px);
+	@include adjust-font-size-to(28px);
 	display: inline;
 	font-weight: 700;
+
+	@include breakpoint($breakpoint-s) {
+		@include adjust-font-size-to(48px);
+	}
+
 }
 
 .project-list-image {
