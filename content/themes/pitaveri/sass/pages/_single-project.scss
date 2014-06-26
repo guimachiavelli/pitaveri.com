@@ -48,9 +48,14 @@
 
 
 	.project-image {
-		padding: 0 15%;
+		padding: 0 10%;
 		line-height: 0;
 		text-align: center;
+
+		@include breakpoint($breakpoint-s) {
+			padding: 0 15%;
+
+		}
 	}
 
 	.detail {
