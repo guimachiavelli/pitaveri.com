@@ -14,7 +14,6 @@ $.fn.isOnScreen = function(){
 	return !(viewport.bottom < bounds.top || viewport.top > bounds.bottom);
 };
 
-
 var toggleMenuColor = function() {
 	if ($(document).scrollTop() < $('.detail').height() - 55) {
 		$('#primary-nav').addClass('white');
@@ -31,7 +30,6 @@ var toggleMenuColor = function() {
 	});
 };
 
-
 var imageCover = function($detail_img) {
 	$detail_img.each(function(){
 		var $image = $(this).find('img'),
@@ -42,7 +40,16 @@ var imageCover = function($detail_img) {
 	$detail_img.imageScroll({
 		coverRatio: 1,
 		speed: 0,
-		mediaWidth: 1400
+		mediaWidth: 1400,
+		mediaHeight: 933
+	});
+};
+
+var projectListImage = 	function($detail_img) {
+	$detail_img.each(function(){
+		var $image = $(this).find('img'),
+			image_src = $image.attr('src');
+		$(this).css('background-image', 'url("'+image_src+'")').find('img').remove();
 	});
 };
 
@@ -51,6 +58,8 @@ $(document).ready(function() {
 	if ($('html').hasClass('no-touch')) {
 		imageCover($('.detail'));
 	}
+
+	projectListImage($('.project-list-image'));
 
 	if ($('body').hasClass('single') || $('body').hasClass('home')) {
 		$(document).on('scroll', function(){

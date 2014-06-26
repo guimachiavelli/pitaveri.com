@@ -1,16 +1,13 @@
-.page {
-	
-}
-
 .project-list {
 	width: 100%;
 	margin-top: rhythm(10);
 }
 
 .project-list-item {
-	margin: 0 0 rhythm() 40px;
-	float: left; 
-    clear: left; 
+	margin-left: 40px;
+	padding: rhythm(.5) 0;
+	float: left;
+    clear: left;
 	
 	a {	border: 0; }
 
@@ -49,9 +46,13 @@
 	z-index: 0;
 	display: none;
 	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	@include background-size(cover);
+	background-position: 0 -18px;
 
 	img {
-		width: 100%;
+		min-width: 100%;
 		height: auto;
 	}
 }

@@ -12,7 +12,7 @@
 							<h1 class="project-list-title"><?php the_title(); ?></h1>
 						</a>
 					</header>
-					<figure class="project-list-image"><?php the_post_thumbnail('full'); ?></figure>
+					<figure class="project-list-image"><?php the_post_thumbnail('large'); ?></figure>
 				</li>
 		<?php } ?>
 	</ul>
