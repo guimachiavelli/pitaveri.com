@@ -57,14 +57,15 @@ var projectListImage = 	function($detail_img) {
 $(document).ready(function() {
 	if ($('html').hasClass('no-touch')) {
 		imageCover($('.detail'));
+		toggleMenuColor();
+		if ($('body').hasClass('single') || $('body').hasClass('home')) {
+			$(document).on('scroll', function(){
+				toggleMenuColor();
+			});
+		}
 	}
 
 	projectListImage($('.project-list-image'));
 
-	if ($('body').hasClass('single') || $('body').hasClass('home')) {
-		$(document).on('scroll', function(){
-			toggleMenuColor();
-		});
-	}
 });
 

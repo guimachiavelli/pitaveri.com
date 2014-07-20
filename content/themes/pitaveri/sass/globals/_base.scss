@@ -8,6 +8,7 @@ body {
 	width: 100%;
 	@include adjust-leading-to(2);
 	@include box-sizing(border-box);
+	padding-bottom: rhythm(2);
 }
 
 body.page {

@@ -44,12 +44,12 @@
 }
 
 .project-list-date {
-	@include adjust-font-size-to(28px);
+	@include adjust-font-size-to(20px);
 	display: inline;
 	font-weight: 700;
 
 	@include breakpoint($breakpoint-s) {
-		@include adjust-font-size-to(48px);
+		@include adjust-font-size-to(42px);
 	}
 
 }

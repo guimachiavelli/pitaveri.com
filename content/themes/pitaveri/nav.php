@@ -1,4 +1,4 @@
-<nav id="primary-nav" class="<?php if (is_front_page() || is_single()) { echo 'white'; } ?>">
+<nav id="primary-nav" class="">
 	<h1 id="menu-title" class="outline active">Menu</h1>
 	<ul>
 		<li class="menu-item pippo"><a href="<?php bloginfo('url'); ?>">Filippo Taveri</a></li>

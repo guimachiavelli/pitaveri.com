@@ -74,9 +74,9 @@
 	}
 
 	img {
-		width: auto;
+		width: 100%;
 		height: auto;
-		max-height: 600px;
+		/*max-height: 600px;*/
 		max-width: 100%;
 	}
 
@@ -103,5 +103,25 @@
 	right: 0;
 }
 
+.touch {
+	
+	.project-title {
+		margin-top: 20%;
+		top: auto;
+	}
+
+	.detail {
+		height: auto;
+	}
+
+	.detail + .detail {
+		margin-top: rhythm(4);
+	}
+
+	.project-image {
+		padding: 0;
+	}
+
+}
 
 
