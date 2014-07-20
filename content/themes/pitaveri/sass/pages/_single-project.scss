@@ -145,6 +145,7 @@
 	position: absolute;
 	top: 0;
 	@include adjust-font-size-to(22px);
+	font-weight: 800;
 }
 
 .project-next {
