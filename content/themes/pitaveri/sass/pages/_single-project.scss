@@ -16,11 +16,15 @@
 		height: 50%;
 		margin-left: -30%;
 		margin-top: -10%;
+		font-weight: 400;
 	}
 
 	time {
 		display: block;
 		font-weight: 800;
+		@include breakpoint($breakpoint-s) {
+			font-weight: 400;
+		}
 	}
 }
 
@@ -63,39 +67,40 @@
 	}
 
 	.project-image + .project-image {
-		@include  breakpoint(max-width $breakpoint-s) {
+		@include breakpoint(max-width $breakpoint-s) {
 			margin-top: 7px;
 		}
 	}
 
 	.detail {
-		padding: 0;
 		height: auto;
 		border: 0;
-		padding: 0 40px;
+		padding: 40px;
 		
 		@include breakpoint($breakpoint-s) {
 			height: 110%;
+			padding: 0;
 		}
 	}
 
 	.featured-image {
 		margin-top: rhythm(5, 26px);
 		height: 0;
+		width: 100%;
 		padding-top: 100%;
 		border-right: 7px solid #fff;
 		border-left: 7px solid #fff;
 		position: relative;
 		overflow: hidden;
-		@include box-sizing(border-box);
 
 		img {
 			position: absolute;
-			left: 7px;
+			left: 0;
 			top: 0;
-			right: 7px;
+			right: 0;
 			bottom: 0;
 			height: 100%;
+			min-width: 100%;
 			width: auto;
 			max-width: none;
 			@include translateX(-25%);
@@ -111,8 +116,10 @@
 				position: static;
 				height: auto;
 				margin-top: 0;
+				min-width: 100%;
 				max-width: 100%;
 				width: 100%;
+				@include translateX(0);
 			}
 		}
 	}
@@ -128,7 +135,6 @@
 	img {
 		width: 100%;
 		height: auto;
-		/*max-height: 600px;*/
 		max-width: 100%;
 	}
 
@@ -137,6 +143,7 @@
 
 .project-footer {
 	margin: rhythm(16) 40px rhythm(4) 40px;
+	padding-bottom: 40px;
 	height: rhythm(2);
 	position: relative;
 }
