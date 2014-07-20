@@ -1,13 +1,15 @@
 .project-title {
-	position: absolute;
-	color: #fff;
-	z-index: 10;
-	top: 50%;
 	margin-left: 40px;
-	@include adjust-font-size-to(60px, 6);	
-
-
+	@include adjust-font-size-to(40px, 4);
+	font-weight: 800;
+	top: auto;
+	margin-top: 40px;
+	
 	@include breakpoint($breakpoint-s) {
+		color: #fff;
+		z-index: 10;
+		top: 50%;
+		position: absolute;
 		@include adjust-font-size-to(90px, 9);
 		left: 50%;
 		width: 50%;
@@ -18,6 +20,7 @@
 
 	time {
 		display: block;
+		font-weight: 800;
 	}
 }
 
@@ -29,11 +32,11 @@
 	p, .project-image {
 		width: 100%;
 		display: block;
-		padding: 0 10%;
+		padding: 0 40px;
 		font-weight: 700;
-		margin-top: rhythm(5);
+		margin-top: 40px;
 		@include box-sizing(border-box);
-		@include adjust-font-size-to(26px);
+		@include adjust-font-size-to(18px, 2.25);
 
 		&:last-child {
 			margin-bottom: rhythm(8);
@@ -48,29 +51,76 @@
 
 
 	.project-image {
-		padding: 0 10%;
+		padding: 0;
 		line-height: 0;
 		text-align: center;
+		border-right: 7px solid #fff;
+		border-left: 7px solid #fff;
 
 		@include breakpoint($breakpoint-s) {
 			padding: 0 15%;
+		}
+	}
 
+	.project-image + .project-image {
+		@include  breakpoint(max-width $breakpoint-s) {
+			margin-top: 7px;
 		}
 	}
 
 	.detail {
 		padding: 0;
-		height: 110%;
-		background-attachment: fixed;
-		@include background-size(cover);
-
-		&.featured-image {
-			margin-top: 0;
+		height: auto;
+		border: 0;
+		padding: 0 40px;
+		
+		@include breakpoint($breakpoint-s) {
+			height: 110%;
 		}
 	}
 
+	.featured-image {
+		margin-top: rhythm(5, 26px);
+		height: 0;
+		padding-top: 100%;
+		border-right: 7px solid #fff;
+		border-left: 7px solid #fff;
+		position: relative;
+		overflow: hidden;
+		@include box-sizing(border-box);
+
+		img {
+			position: absolute;
+			left: 7px;
+			top: 0;
+			right: 7px;
+			bottom: 0;
+			height: 100%;
+			width: auto;
+			max-width: none;
+			@include translateX(-25%);
+		}
+
+		@include breakpoint($breakpoint-s) {
+			border: 0;
+			padding-top: 0;
+			height: auto;
+
+			img {
+				position: static;
+				height: auto;
+				margin-top: 0;
+				max-width: 100%;
+			}
+		}
+	}
+
+
 	.detail + .detail {
-		margin-top: 0;
+		margin-top: rhythm(2);
+		@include breakpoint($breakpoint-s) {
+			margin-top: 0;
+		}
 	}
 
 	img {
@@ -103,25 +153,40 @@
 	right: 0;
 }
 
-.touch {
-	
-	.project-title {
-		margin-top: 20%;
-		top: auto;
+.project-nav-link-text {
+	@include breakpoint($breakpoint-s) {
+		display: none;
 	}
-
-	.detail {
-		height: auto;
-	}
-
-	.detail + .detail {
-		margin-top: rhythm(4);
-	}
-
-	.project-image {
-		padding: 0;
-	}
-
 }
+
+.project-nav-link-title {
+	@include breakpoint(max-width $breakpoint-s) {
+		display: none;
+	}	
+}
+
+
+/*
+ *.touch {
+ *    
+ *    .project-title {
+ *        
+ *        top: auto;
+ *    }
+ *
+ *    .detail {
+ *        height: auto;
+ *    }
+ *
+ *    .detail + .detail {
+ *        margin-top: rhythm(4);
+ *    }
+ *
+ *    .project-image {
+ *        padding: 0;
+ *    }
+ *
+ *}
+ */
 
 

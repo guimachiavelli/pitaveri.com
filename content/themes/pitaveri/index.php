@@ -10,19 +10,41 @@
 ?>
 	<article class="main-content">
 
-		<h1 class="project-title"><?php the_title(); ?> <time datetime="<?php the_time('Y-m') ?>"><?php the_time('Y/m') ?></time></h1>
-
 		<figure class="detail project-image featured-image">
 			<?php the_post_thumbnail('large'); ?>
 		</figure>
 
+
+		<h1 class="project-title"><?php the_title(); ?> <time datetime="<?php the_time('Y-m') ?>"><?php the_time('Y/m') ?></time></h1>
+
 		<?php the_content(); ?>
 
-		<footer class="project-footer">
-			<ul>
-				<li class="project-nav-link project-next"><?php next_post_link('‹ %link'); ?></li>
-				<li class="project-nav-link project-prev"><?php previous_post_link('%link ›'); ?></li>
-			</ul>
+        <footer class="project-footer">
+            <?php
+                $prev_post = get_adjacent_post();
+                $next_post = get_adjacent_post(false, '', false);
+            ?>
+
+            <?php if ($prev_post) : ?>
+                <li class="project-nav-link project-prev">
+                    <a href="<?php echo get_permalink($prev_post->ID); ?>">
+                        <span class="project-nav-link-text">Prev</span>
+                        <span class="project-nav-link-title"><?php echo $prev_post->post_title; ?></span>
+                        ›
+                    </a>
+                </li>
+            <?php endif; ?>
+
+            <?php if ($next_post) : ?>
+                <li class="project-nav-link project-next">
+                    <a href="<?php echo get_permalink($next_post->ID); ?>">
+                        ‹
+                        <span class="project-nav-link-text">Next</span>
+                        <span class="project-nav-link-title"><?php echo $next_post->post_title; ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+
 		</footer>
 
 	</article>
