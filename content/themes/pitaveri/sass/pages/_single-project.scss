@@ -75,7 +75,7 @@
 	.detail {
 		height: auto;
 		border: 0;
-		padding: 40px;
+		padding: 0 40px;
 		
 		@include breakpoint($breakpoint-s) {
 			height: 110%;
@@ -84,10 +84,10 @@
 	}
 
 	.featured-image {
-		margin-top: rhythm(5, 26px);
+		margin-top: 50px;
 		height: 0;
 		width: 100%;
-		padding-top: 100%;
+		padding-top: 90%;
 		border-right: 7px solid #fff;
 		border-left: 7px solid #fff;
 		position: relative;
@@ -142,10 +142,13 @@
 
 
 .project-footer {
-	margin: rhythm(16) 40px rhythm(4) 40px;
-	padding-bottom: 40px;
+	margin: 40px 40px 0 40px;
 	height: rhythm(2);
 	position: relative;
+
+	@include breakpoint($breakpoint-s) {
+		margin: rhythm(16) 40px 0 40px;
+	}
 }
 
 .project-nav-link {
@@ -176,29 +179,3 @@
 		display: none;
 	}	
 }
-
-
-/*
- *.touch {
- *    
- *    .project-title {
- *        
- *        top: auto;
- *    }
- *
- *    .detail {
- *        height: auto;
- *    }
- *
- *    .detail + .detail {
- *        margin-top: rhythm(4);
- *    }
- *
- *    .project-image {
- *        padding: 0;
- *    }
- *
- *}
- */
-
-

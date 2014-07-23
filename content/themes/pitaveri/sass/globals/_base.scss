@@ -4,15 +4,19 @@ html,
 body {
 	background: $white;
 	font-family: $main-font;
-	height: 100%;
+
 	width: 100%;
 	@include adjust-leading-to(2);
 	@include box-sizing(border-box);
-	padding-bottom: rhythm(2);
+	padding-bottom: rhythm();
 }
 
 body.page {
 	height: auto;
+}
+
+body {
+	padding-bottom: rhythm(4);
 }
 
 a, p {
