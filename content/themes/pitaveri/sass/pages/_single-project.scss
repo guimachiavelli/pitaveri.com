@@ -142,12 +142,14 @@
 
 
 .project-footer {
-	margin: 40px 40px 0 40px;
+	margin: 40px;
 	height: rhythm(2);
 	position: relative;
+	padding-bottom: 40px;
 
 	@include breakpoint($breakpoint-s) {
-		margin: rhythm(16) 40px 0 40px;
+		margin: rhythm(16) 40px rhythm(8) 40px;
+		padding: 0;
 	}
 }
 

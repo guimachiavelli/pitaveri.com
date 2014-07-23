@@ -14,8 +14,10 @@
 			<?php the_post_thumbnail('large'); ?>
 		</figure>
 
-
-		<h1 class="project-title"><?php the_title(); ?> <time datetime="<?php the_time('Y-m') ?>"><?php the_time('Y/m') ?></time></h1>
+        <h1 class="project-title">
+            <?php the_title(); ?>
+            <time datetime="<?php the_time('Y-m') ?>"><?php the_time('Y/m') ?></time>
+        </h1>
 
 		<?php the_content(); ?>
 
