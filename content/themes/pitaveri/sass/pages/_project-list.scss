@@ -1,82 +1,84 @@
 .project-list {
-	margin-top: 50px;
-	padding-left: 15px;
+    margin-top: 50px;
+    padding-left: 15px;
 
-	@include breakpoint($breakpoint-s) {
-		margin-top: rhythm(10);
-	}
+    @include breakpoint($breakpoint-s) {
+        margin-top: rhythm(10);
+    }
 
 }
 
 .project-list-item {
-	padding: rhythm(.5) 0;
-	float: left;
+    padding: rhythm(.5) 0;
+    float: left;
     clear: left;
-	width: 90%;
-	
-	a {	border: 0; }
+    width: 90%;
+    
+    a {	border: 0; }
 
-	&:hover {
-		a {	color: $white; }
-		.project-list-title { border-bottom-color: $white; }
-		.project-list-image { display: block; }
-	}
+    &:hover {
+        a {	color: $white; }
+        .project-list-title { border-bottom-color: $white; }
+        .project-list-image { display: block; }
+    }
 
-	@include breakpoint($breakpoint-s) {
-		margin-left: 40px;
-	}
+    @include breakpoint($breakpoint-s) {
+        margin-left: 40px;
+    }
 
 }
 
 .project-list-head {
-	position: relative;
-	z-index: 2;
+    position: relative;
+    z-index: 2;
 
-	a {
-		display: block;
-	}
+    a {
+        display: block;
+    }
 }
 
 .project-list-title {
-	@include adjust-font-size-to(28px);
-	line-height: 1;
-	border-bottom: 1px solid $text-color;
-	font-weight: 700;
-	@include overflow-control;
-	display: inline-block;
-	max-width: 100%;
+    @include adjust-font-size-to(28px);
+    line-height: 1;
+    border-bottom: 1px solid $text-color;
+    font-weight: 700;
+    display: inline-block;
+    max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 
-	@include breakpoint($breakpoint-s) {
-		@include adjust-font-size-to(48px);
-		line-height: 1;
-		max-width: 65%;
-		margin-bottom: -8px;
-	}
+    @include breakpoint($breakpoint-s) {
+        @include adjust-font-size-to(48px);
+        line-height: 1;
+        max-width: 65%;
+        margin-bottom: -8px;
+    }
 
 }
 
 .project-list-date {
-	@include adjust-font-size-to(20px);
-	display: none;
-	font-weight: 700;
+    @include adjust-font-size-to(20px);
+    display: none;
+    font-weight: 700;
 
-	@include breakpoint($breakpoint-s) {
-		@include adjust-font-size-to(42px);
-		max-width: 30%;
-		padding-right: .5em;
-		display: inline-block;
-	}
+    @include breakpoint($breakpoint-s) {
+        @include adjust-font-size-to(42px);
+        max-width: 30%;
+        padding-right: .5em;
+        display: inline-block;
+    }
 
 }
 
 .project-list-image {
-	position: fixed;
-	top: 0; right: 0; bottom: 0; left: 0;
-	z-index: 0;
-	display: none;
-	pointer-events: none;
-	width: 100%;
-	height: 100%;
-	@include background-size(cover);
-	background-repeat: no-repeat;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 0;
+    display: none;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    @include background-size(cover);
+    background-repeat: no-repeat;
 }

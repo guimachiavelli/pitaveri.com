@@ -1,67 +1,63 @@
-#primary-nav {
-	position: relative;
+.primary-nav {
+    position: relative;
 
-	&.white {
-		@include breakpoint($breakpoint-s) {
-			a {
-				color: #fff;
-				border-bottom-color: $white;
-			}
-		}
-	}
+    &.white {
+        @include breakpoint($breakpoint-s) {
+            a {
+                color: $white;
+                border-bottom-color: $white;
+            }
+        }
+    }
 }
 
-#primary-nav ul {
-	position: fixed;
-	top: 0;
-	z-index: 10;
-	width: 100%;
-	background-color: #fff;
-	@include box-sizing(border-box);
-	height: rhythm(5);
+.primary-nav ul {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #fff;
+    @include box-sizing(border-box);
+    height: rhythm(5);
 
-	@include breakpoint($breakpoint-s) {
-		background-color: transparent;
-		top: rhythm();
-		width: calc(100% - 80px);
-		margin: 20px 40px;
-		padding: 0;
-		height: auto;
-	}
+    @include breakpoint($breakpoint-s) {
+        background-color: transparent;
+        top: rhythm();
+        width: calc(100% - 80px);
+        margin: 20px 40px;
+        padding: 0;
+        height: auto;
+    }
 }
 
 .menu-item {
-	text-decoration: underline;
-	text-transform: lowercase;
-	@include adjust-font-size-to(18px, 5);
-	position: absolute;
-	text-align: center;
-	left: 15px;
-	right: 15px;
+    text-decoration: underline;
+    text-transform: lowercase;
+    @include adjust-font-size-to(18px, 5);
+    position: absolute;
+    text-align: center;
+    left: 15px;
+    right: 15px;
 
-	&:last-child {
-		text-align: right;
-	}
+    &:last-child {
+        text-align: right;
+    }
 
-	&:nth-child(2n) {
-		text-align: left;
-	}
-	
-	a {
-		position: relative;
-		z-index: 1;
-	}
+    &:nth-child(2n) {
+        text-align: left;
+    }
 
-	@include breakpoint($breakpoint-s) {
-		@include adjust-font-size-to(22px,4);
-		text-align: left;
+    a {
+        position: relative;
+        z-index: 1;
+    }
 
-		&:nth-child(2n) {
-			text-align: center;
-		}
-	}
+    @include breakpoint($breakpoint-s) {
+        @include adjust-font-size-to(22px,4);
+        text-align: left;
 
+        &:nth-child(2n) {
+            text-align: center;
+        }
+    }
 }
-
-
-a { color: #000; }

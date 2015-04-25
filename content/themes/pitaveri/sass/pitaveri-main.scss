@@ -1,66 +1,13 @@
-//******************************
-//
-// libraries includes
-//
-//******************************
-
 @import 'compass';
 @import 'breakpoint';
 
-//******************************
-//
-// global variables and resets
-//
-//******************************
 @import 'globals/reset';
-@import 'globals/mixins';
 @import 'globals/grid';
 @import 'globals/colors';
-
-
-//******************************
-//
-// general elements used
-// throughout the site
-//
-//******************************
 @import 'globals/base';
-@import 'globals/elements';
 
-
-//******************************
-//
-// page sections used
-// throughout the site
-//
-//******************************
-@import 'partials/header';
 @import 'partials/nav';
 
-
-//******************************
-//
-// page specific css
-//
-//******************************
 @import 'pages/project-list';
 @import 'pages/single-project';
 @import 'pages/page';
-
-
-//******************************
-//
-// javascript/no-javascript configs
-//
-//******************************
-@import 'js/js';
-
-
-//******************************
-//
-// to beat old ie's into
-// submission
-//
-//******************************
-@import 'cross-browser/ie9';
-@import 'cross-browser/ie8';

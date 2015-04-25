@@ -2,29 +2,53 @@
 
 html,
 body {
-	background: $white;
-	font-family: $main-font;
-	height: 100%;
-	width: 100%;
-	@include adjust-leading-to(2);
-	@include box-sizing(border-box);
+    background: $white;
+    font-family: $main-font;
+    height: 100%;
+    width: 100%;
+    @include adjust-leading-to(2);
+    @include box-sizing(border-box);
 }
 
 body.page {
-	height: auto;
+    height: auto;
 }
 
-a, p {
-	font-weight: 700;
+p {
+    font-weight: 700;
 }
-
 
 a {
-	display: inline-block;
-	border-bottom: 1px solid $text-color;
-	line-height: 1;
+    @include transition-property(color);
+    @include transition-duration(.1s);
+    color: $link-color;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid $text-color;
+    line-height: 1;
+    font-weight: 700;
 
-	&:hover {
-		border-color: transparent
-	}
+    &:hover  {
+        border-color: transparent;
+        text-decoration: none;
+        color: $text-color;
+    }
 }
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+q {
+    &:before { content: "“"; }
+    &:after { content: "”"; }
+}
+
+::-moz-selection {
+
+}
+
+::selection {
+
+}
+
+.outline { display: none }

@@ -1,183 +1,183 @@
 .project-title {
-	margin-left: 40px;
-	@include adjust-font-size-to(40px, 4);
-	font-weight: 800;
-	top: auto;
-	margin-top: 40px;
-	
-	@include breakpoint($breakpoint-s) {
-		color: #fff;
-		z-index: 10;
-		top: 50%;
-		position: absolute;
-		@include adjust-font-size-to(90px, 9);
-		left: 50%;
-		width: 50%;
-		height: 50%;
-		margin-left: -30%;
-		margin-top: -10%;
-		font-weight: 400;
-	}
+    margin-left: 40px;
+    @include adjust-font-size-to(40px, 4);
+    font-weight: 800;
+    top: auto;
+    margin-top: 40px;
+    
+    @include breakpoint($breakpoint-s) {
+        color: #fff;
+        z-index: 10;
+        top: 50%;
+        position: absolute;
+        @include adjust-font-size-to(90px, 9);
+        left: 50%;
+        width: 50%;
+        height: 50%;
+        margin-left: -30%;
+        margin-top: -10%;
+        font-weight: 400;
+    }
 
-	time {
-		display: block;
-		font-weight: 800;
-		@include breakpoint($breakpoint-s) {
-			font-weight: 400;
-		}
-	}
+    time {
+        display: block;
+        font-weight: 800;
+        @include breakpoint($breakpoint-s) {
+            font-weight: 400;
+        }
+    }
 }
 
 .main-content {
-	height: 100%;
-	width: 100%;
-	position: relative;
+    height: 100%;
+    width: 100%;
+    position: relative;
 
-	p, .project-image {
-		width: 100%;
-		display: block;
-		padding: 0 40px;
-		font-weight: 700;
-		margin-top: 40px;
-		@include box-sizing(border-box);
-		@include adjust-font-size-to(18px, 2.25);
+    p, .project-image {
+        width: 100%;
+        display: block;
+        padding: 0 40px;
+        font-weight: 700;
+        margin-top: 40px;
+        @include box-sizing(border-box);
+        @include adjust-font-size-to(18px, 2.25);
 
-		&:last-child {
-			margin-bottom: rhythm(8);
-		}
+        &:last-child {
+            margin-bottom: rhythm(8);
+        }
 
-		@include breakpoint($breakpoint-s) {
-			@include adjust-font-size-to(32px);
-			padding: 0 20%;
-			margin-top: rhythm(4);
-		}
-	}
-
-
-	.project-image {
-		padding: 0;
-		line-height: 0;
-		text-align: center;
-		border-right: 7px solid #fff;
-		border-left: 7px solid #fff;
-
-		@include breakpoint($breakpoint-s) {
-			padding: 0 15%;
-		}
-	}
-
-	.project-image + .project-image {
-		@include breakpoint(max-width $breakpoint-s) {
-			margin-top: 7px;
-		}
-	}
-
-	.detail {
-		height: auto;
-		border: 0;
-		padding: 0 40px;
-		
-		@include breakpoint($breakpoint-s) {
-			height: 110%;
-			padding: 0;
-		}
-	}
-
-	.featured-image {
-		margin-top: 50px;
-		height: 0;
-		width: 100%;
-		padding-top: 90%;
-		border-right: 7px solid #fff;
-		border-left: 7px solid #fff;
-		position: relative;
-		overflow: hidden;
-
-		img {
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			height: 100%;
-			min-width: 100%;
-			width: auto;
-			max-width: none;
-			@include translateX(-25%);
-		}
-
-		@include breakpoint($breakpoint-s) {
-			border: 0;
-			padding-top: 0;
-			height: auto;
-			margin-top: 0;
-
-			img {
-				position: static;
-				height: auto;
-				margin-top: 0;
-				min-width: 100%;
-				max-width: 100%;
-				width: 100%;
-				@include translateX(0);
-			}
-		}
-	}
+        @include breakpoint($breakpoint-s) {
+            @include adjust-font-size-to(32px);
+            padding: 0 20%;
+            margin-top: rhythm(4);
+        }
+    }
 
 
-	.detail + .detail {
-		margin-top: rhythm(2);
-		@include breakpoint($breakpoint-s) {
-			margin-top: 0;
-		}
-	}
+    .project-image {
+        padding: 0;
+        line-height: 0;
+        text-align: center;
+        border-right: 7px solid #fff;
+        border-left: 7px solid #fff;
 
-	img {
-		width: 100%;
-		height: auto;
-		max-width: 100%;
-	}
+        @include breakpoint($breakpoint-s) {
+            padding: 0 15%;
+        }
+    }
+
+    .project-image + .project-image {
+        @include breakpoint(max-width $breakpoint-s) {
+            margin-top: 7px;
+        }
+    }
+
+    .detail {
+        height: auto;
+        border: 0;
+        padding: 0 40px;
+        
+        @include breakpoint($breakpoint-s) {
+            height: 110%;
+            padding: 0;
+        }
+    }
+
+    .featured-image {
+        margin-top: 50px;
+        height: 0;
+        width: 100%;
+        padding-top: 90%;
+        border-right: 7px solid #fff;
+        border-left: 7px solid #fff;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            min-width: 100%;
+            width: auto;
+            max-width: none;
+            @include translateX(-25%);
+        }
+
+        @include breakpoint($breakpoint-s) {
+            border: 0;
+            padding-top: 0;
+            height: auto;
+            margin-top: 0;
+
+            img {
+                position: static;
+                height: auto;
+                margin-top: 0;
+                min-width: 100%;
+                max-width: 100%;
+                width: 100%;
+                @include translateX(0);
+            }
+        }
+    }
+
+
+    .detail + .detail {
+        margin-top: rhythm(2);
+        @include breakpoint($breakpoint-s) {
+            margin-top: 0;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
 
 }
 
 
 .project-footer {
-	margin: 40px;
-	height: rhythm(2);
-	position: relative;
-	padding-bottom: 40px;
+    margin: 40px;
+    height: rhythm(2);
+    position: relative;
+    padding-bottom: 40px;
 
-	@include breakpoint($breakpoint-s) {
-		margin: rhythm(16) 40px rhythm(8) 40px;
-		padding: 0;
-	}
+    @include breakpoint($breakpoint-s) {
+        margin: rhythm(16) 40px rhythm(8) 40px;
+        padding: 0;
+    }
 }
 
 .project-nav-link {
-	position: absolute;
-	top: 0;
-	@include adjust-font-size-to(22px);
-	span {
-		font-weight: 800;
-	}
+    position: absolute;
+    top: 0;
+    @include adjust-font-size-to(22px);
+    span {
+        font-weight: 800;
+    }
 }
 
 .project-next {
-	left: 0;
+    left: 0;
 }
 
 .project-prev {
-	right: 0;
+    right: 0;
 }
 
 .project-nav-link-text {
-	@include breakpoint($breakpoint-s) {
-		display: none;
-	}
+    @include breakpoint($breakpoint-s) {
+        display: none;
+    }
 }
 
 .project-nav-link-title {
-	@include breakpoint(max-width $breakpoint-s) {
-		display: none;
-	}	
+    @include breakpoint(max-width $breakpoint-s) {
+        display: none;
+    }	
 }
