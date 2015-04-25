@@ -7,15 +7,6 @@
   ],
   "license": "MIT",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "content/themes/pitaveri//vendor/",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "modernizr": "~2.8.2"
   }
 }
