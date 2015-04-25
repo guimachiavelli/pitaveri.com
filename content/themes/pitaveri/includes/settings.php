@@ -67,3 +67,7 @@
 		add_editor_style('css/tiny-mce.css');
 	}
 	add_action('init', 'p_tiny_mce_full_width');
+
+    // remove wp emoji stuff
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
