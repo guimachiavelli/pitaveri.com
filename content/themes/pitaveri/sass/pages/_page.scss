@@ -3,19 +3,26 @@
 }
 
 .page-title {
-    margin-left: 40px;
+    margin-left: 15px;
     font-weight: 800;
     @include adjust-font-size-to(32px);
+
+    @include breakpoint($breakpoint-s) {
+        margin-left: 40px;
+    }
 }
 
 .page-content {
-    margin-top: rhythm(4, 32px);
-    margin-left: 40px;
+    margin: rhythm(4, 32px) 15px;
     font-weight: 800;
     max-width: 700px;
 
     p {
         margin-top: rhythm(2);
         padding: 0;
+    }
+
+    @include breakpoint($breakpoint-s) {
+        margin: rhythm(4, 32px) 40px;
     }
 }

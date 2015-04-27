@@ -13,17 +13,19 @@
     float: left;
     clear: left;
     width: 90%;
-    
-    a {	border: 0; }
 
-    &:hover {
-        a {	color: $white; }
-        .project-list-title { border-bottom-color: $white; }
-        .project-list-image { display: block; }
-    }
+    a {	border: 0; }
 
     @include breakpoint($breakpoint-s) {
         margin-left: 40px;
+    }
+
+    .no-touch {
+        &:hover {
+            a {	color: $white; }
+            .project-list-title { border-bottom-color: $white; }
+            .project-list-image { display: block; }
+        }
     }
 
 }

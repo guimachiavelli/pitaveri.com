@@ -4,9 +4,9 @@
     font-weight: 800;
     top: auto;
     margin-top: 40px;
-    
+
     @include breakpoint($breakpoint-s) {
-        color: #fff;
+        color: $white;
         z-index: 10;
         top: 50%;
         position: absolute;
@@ -75,11 +75,13 @@
     .detail {
         height: auto;
         border: 0;
-        padding: 0 40px;
-        
+        border-right: 7px solid $white;
+        border-left: 7px solid $white;
+
         @include breakpoint($breakpoint-s) {
             height: 110%;
             padding: 0;
+            border: 0;
         }
     }
 
@@ -88,8 +90,8 @@
         height: 0;
         width: 100%;
         padding-top: 90%;
-        border-right: 7px solid #fff;
-        border-left: 7px solid #fff;
+        border-right: 7px solid $white;
+        border-left: 7px solid $white;
         position: relative;
         overflow: hidden;
 
@@ -126,7 +128,6 @@
 
 
     .detail + .detail {
-        margin-top: rhythm(2);
         @include breakpoint($breakpoint-s) {
             margin-top: 0;
         }
@@ -142,32 +143,32 @@
 
 
 .project-footer {
-    margin: 40px;
-    height: rhythm(2);
-    position: relative;
-    padding-bottom: 40px;
+    display: table;
+    box-sizing: border-box;
+    padding: rhythm(5) 15px rhythm(3);
+    width: 100%;
 
     @include breakpoint($breakpoint-s) {
-        margin: rhythm(16) 40px rhythm(8) 40px;
-        padding: 0;
+        padding: rhythm(16) 40px rhythm(8) 40px;
     }
 }
 
 .project-nav-link {
-    position: absolute;
-    top: 0;
-    @include adjust-font-size-to(22px);
+    display: table-cell;
+    width: 50%;
+    @include adjust-font-size-to(18px);
+
     span {
-        font-weight: 800;
+        font-weight: inherit;
+    }
+
+    @include breakpoint($breakpoint-s) {
+        @include adjust-font-size-to(22px);
     }
 }
 
-.project-next {
-    left: 0;
-}
-
 .project-prev {
-    right: 0;
+    text-align: right;
 }
 
 .project-nav-link-text {
