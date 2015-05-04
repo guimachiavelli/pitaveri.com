@@ -10,7 +10,7 @@
 ?>
     <article class="main-content">
 
-        <figure class="detail project-image featured-image">
+        <figure class="featured-image">
             <?php the_post_thumbnail('large'); ?>
         </figure>
 

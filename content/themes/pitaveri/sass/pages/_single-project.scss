@@ -43,13 +43,18 @@
         @include adjust-font-size-to(18px, 2.25);
 
         &:last-child {
-            margin-bottom: rhythm(8);
+            margin-bottom: rhythm(8, 18px);
         }
 
         @include breakpoint($breakpoint-s) {
-            @include adjust-font-size-to(32px);
+            @include adjust-font-size-to(28px);
             padding: 0 20%;
-            margin-top: rhythm(4);
+            margin-top: rhythm(4, 28px);
+        }
+
+        @include breakpoint($breakpoint-l) {
+            @include adjust-font-size-to(32px);
+            margin-top: rhythm(4, 32px);
         }
     }
 
@@ -118,14 +123,12 @@
                 position: static;
                 height: auto;
                 margin-top: 0;
-                min-width: 100%;
                 max-width: 100%;
                 width: 100%;
                 @include translateX(0);
             }
         }
     }
-
 
     .detail + .detail {
         @include breakpoint($breakpoint-s) {
@@ -140,7 +143,6 @@
     }
 
 }
-
 
 .project-footer {
     display: table;
