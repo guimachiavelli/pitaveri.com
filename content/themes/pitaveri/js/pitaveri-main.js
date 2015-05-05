@@ -85,13 +85,12 @@
 
         imageSrc = $image.find('img').attr('srcset');
 
-        console.log($image)
         if (typeof imageSrc !== 'undefined') {
             imageSrc = imageSrc.split(', ');
             srcIndex = window.devicePixelRatio > 1.5 ? 1 : 0;
             imageSrc = imageSrc[srcIndex].split(' ')[0];
         } else {
-            imageSrc = $image.attr('src');
+            imageSrc = $image.find('img').attr('src');
         }
 
         $image.remove();
