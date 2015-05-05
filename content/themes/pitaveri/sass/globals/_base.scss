@@ -1,13 +1,22 @@
+@mixin p-text-shadow {
+    text-shadow: 2px 1px 3px rgba(0,0,0,0.6), -1px 0 2px rgba(0,0,0,0.2);
+}
+
 @include establish-baseline($base-font-size);
 
 html,
 body {
     background: $white;
     font-family: $main-font;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     @include adjust-leading-to(2);
     @include box-sizing(border-box);
+}
+
+body {
+    background: transparent url() no-repeat fixed 0 0;
+    background-size: cover;
 }
 
 body.page {
@@ -19,19 +28,20 @@ p {
 }
 
 a {
-    @include transition-property(color);
-    @include transition-duration(.1s);
+    @include transition-property(color, border);
+    @include transition-duration(100ms);
+    @include p-text-shadow;
     color: $link-color;
     text-decoration: none;
     display: inline-block;
-    border-bottom: 1px solid $text-color;
-    line-height: 1;
+    color: $white;
+    border-bottom: 2px solid $white;
+    line-height: 1.1;
     font-weight: 700;
 
     &:hover  {
         border-color: transparent;
         text-decoration: none;
-        color: $text-color;
     }
 }
 
@@ -52,3 +62,5 @@ q {
 }
 
 .outline { display: none }
+
+

@@ -80,19 +80,37 @@
         });
     };
 
+    var featuredImage = function($image) {
+        var imageSrc, srcIndex;
 
-    $(document).ready(function() {
-        if (!('ontouchstart' in window)) {
-            $('html').addClass('no-touch');
-            imageCover($('.detail'));
-            toggleMenuColor();
-            if ($('body').hasClass('single') || $('body').hasClass('home')) {
-                $(document).on('scroll', function(){
-                    toggleMenuColor();
-                });
-            }
+        imageSrc = $image.find('img').attr('srcset');
+
+        console.log($image)
+        if (typeof imageSrc !== 'undefined') {
+            imageSrc = imageSrc.split(', ');
+            srcIndex = window.devicePixelRatio > 1.5 ? 1 : 0;
+            imageSrc = imageSrc[srcIndex].split(' ')[0];
+        } else {
+            imageSrc = $image.attr('src');
         }
 
-        //projectListImage($('.project-list-image'));
+        $image.remove();
+        $('body').css('background-image', 'url("' + imageSrc + '")');
+    };
+
+    $(document).ready(function() {
+        //if (!('ontouchstart' in window)) {
+            //$('html').addClass('no-touch');
+            //imageCover($('.detail, .featured-image'));
+            //toggleMenuColor();
+            //if ($('body').hasClass('single') || $('body').hasClass('home')) {
+                //$(document).on('scroll', function(){
+                    //toggleMenuColor();
+                //});
+            //}
+        //}
+
+        projectListImage($('.project-list-image'));
+        featuredImage($('.featured-image'));
     });
 }());
