@@ -3,4 +3,6 @@
 .sass-cache
 .htaccess
 wp-config-env.php
+uploads
+languages
 
