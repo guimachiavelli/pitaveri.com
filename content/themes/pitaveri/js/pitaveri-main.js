@@ -2,6 +2,8 @@
     /* global $ */
     'use strict';
 
+    var lastScroll = 0;
+
     $.fn.isOnScreen = function(){
         var $window, viewport = {}, bounds = {}, winHeight, elHeight;
 
@@ -13,50 +15,29 @@
         bounds.top = this.offset().top;
 
         viewport.bottom = viewport.top + winHeight - elHeight + 55;
-        bounds.bottom = bounds.top + elHeight - 45;
+        bounds.bottom = bounds.top + elHeight - 100;
 
         return !(viewport.bottom < bounds.top || viewport.top > bounds.bottom);
     };
 
-    var toggleMenuColor = function() {
-        if ($(document).scrollTop() < $('.detail').height() - 55) {
-            $('.primary-nav').addClass('white');
+    var toggleBackgroundColor = function(event) {
+        event = event || {};
+
+        if (event.timeStamp - lastScroll < 500) {
             return;
         }
 
-        $('.detail').each(function(){
+        $('p').each(function(){
             if ($(this).isOnScreen()) {
-                $('.primary-nav').addClass('white');
+                $('body').addClass('fade-image');
                 return false;
-            } else if (!$(this).isOnScreen()) {
-                $('.primary-nav').removeClass('white');
-            }
-        });
-    };
-
-    var imageCover = function($detail_img) {
-        var $image, imageSrc, srcIndex;
-        $detail_img.each(function(){
-            $image = $(this).find('img');
-            imageSrc = $image.attr('srcset');
-
-            if (typeof imageSrc !== 'undefined') {
-                imageSrc = imageSrc.split(', ');
-                srcIndex = window.devicePixelRatio > 1.5 ? 1 : 0;
-                imageSrc = imageSrc[srcIndex].split(' ')[0];
-            } else {
-                imageSrc = $image.attr('src');
             }
 
-            $(this).attr('data-image', imageSrc).find('img').remove();
+            $('body').removeClass('fade-image');
+            lastScroll = event.timesStamp;
+
         });
 
-        $detail_img.imageScroll({
-            coverRatio: 1,
-            speed: 0,
-            mediaWidth: 1400,
-            mediaHeight: 933
-        });
     };
 
     var projectListImage = function($detail_img) {
@@ -95,21 +76,15 @@
 
         $image.remove();
         $('body').css('background-image', 'url("' + imageSrc + '")');
+
+        return imageSrc;
     };
 
     $(document).ready(function() {
-        //if (!('ontouchstart' in window)) {
-            //$('html').addClass('no-touch');
-            //imageCover($('.detail, .featured-image'));
-            //toggleMenuColor();
-            //if ($('body').hasClass('single') || $('body').hasClass('home')) {
-                //$(document).on('scroll', function(){
-                    //toggleMenuColor();
-                //});
-            //}
-        //}
-
         projectListImage($('.project-list-image'));
         featuredImage($('.featured-image'));
+        toggleBackgroundColor();
+
+        $(document).on('scroll', toggleBackgroundColor);
     });
 }());
