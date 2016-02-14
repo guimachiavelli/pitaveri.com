@@ -12,8 +12,8 @@
         viewport.top = $window.scrollTop();
         bounds.top = this.offset().top;
 
-        viewport.bottom = viewport.top + winHeight - elHeight + 55;
-        bounds.bottom = bounds.top + elHeight - 45;
+        viewport.bottom = viewport.top + winHeight - elHeight + 170;
+        bounds.bottom = bounds.top + elHeight - 50;
 
         return !(viewport.bottom < bounds.top || viewport.top > bounds.bottom);
     };
@@ -28,9 +28,9 @@
             if ($(this).isOnScreen()) {
                 $('.primary-nav').addClass('white');
                 return false;
-            } else if (!$(this).isOnScreen()) {
-                $('.primary-nav').removeClass('white');
             }
+
+            $('.primary-nav').removeClass('white');
         });
     };
 
@@ -84,7 +84,7 @@
     $(document).ready(function() {
         if (!('ontouchstart' in window)) {
             $('html').addClass('no-touch');
-            imageCover($('.detail'));
+            //imageCover($('.detail'));
             toggleMenuColor();
             if ($('body').hasClass('single') || $('body').hasClass('home')) {
                 $(document).on('scroll', function(){
