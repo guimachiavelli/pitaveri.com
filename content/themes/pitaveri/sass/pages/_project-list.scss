@@ -1,11 +1,9 @@
 .project-list {
     margin-top: 50px;
-    padding-left: 15px;
 
     @include breakpoint($breakpoint-s) {
         margin-top: rhythm(10);
     }
-
 }
 
 .project-list-item {
