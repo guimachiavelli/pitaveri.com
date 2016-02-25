@@ -93,6 +93,6 @@
             }
         }
 
-        //projectListImage($('.project-list-image'));
+        projectListImage($('.project-list-image'));
     });
 }());
