@@ -35,8 +35,8 @@ a {
     }
 }
 
-strong { font-weight: 700; }
-em { font-style: italic; }
+strong, b { font-weight: 700; }
+em, i { font-weight: inherit; font-style: italic; }
 
 q {
     &:before { content: "“"; }
