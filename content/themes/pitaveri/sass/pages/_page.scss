@@ -1,5 +1,6 @@
 .main-content--page {
     margin-top: rhythm(12);
+    padding-left: 15px;
 }
 
 .page-title {
@@ -20,9 +21,14 @@
     p {
         margin-top: rhythm(2);
         padding: 0;
+
+        &:last-child {
+            qmargin-bottom: rhythm(5);
+        }
     }
 
     @include breakpoint($breakpoint-s) {
         margin: rhythm(4, 32px) 40px;
     }
+
 }
