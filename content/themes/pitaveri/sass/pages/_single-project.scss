@@ -122,7 +122,7 @@
 
     .detail + .detail {
         @include breakpoint($breakpoint-s) {
-            /*margin-top: 0;*/
+            margin-top: $site-padding;
         }
     }
 
@@ -138,7 +138,7 @@
 .project-footer {
     display: table;
     box-sizing: border-box;
-    padding: rhythm(5) 15px rhythm(3);
+    padding: rhythm(5) $site-padding rhythm(3);
     width: 100%;
 
     @include breakpoint($breakpoint-s) {

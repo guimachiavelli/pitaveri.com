@@ -36,8 +36,8 @@
     @include adjust-font-size-to(18px, 5);
     position: absolute;
     text-align: center;
-    left: 15px;
-    right: 15px;
+    left: $site-padding;
+    right: $site-padding;
 
     a {
         position: relative;

@@ -3,7 +3,7 @@
 }
 
 .page-title {
-    margin-left: 15px;
+    margin-left: $site-padding;
     font-weight: 800;
     @include adjust-font-size-to(32px);
 
@@ -13,7 +13,7 @@
 }
 
 .page-content {
-    margin: rhythm(4, 32px) 15px;
+    margin: rhythm(4, 32px) $site-padding;
     font-weight: 800;
     max-width: 700px;
 
