@@ -18,12 +18,10 @@
         margin-left: 40px;
     }
 
-    .no-touch {
-        &:hover {
-            a {	color: $white; }
-            .project-list-title { border-bottom-color: $white; }
-            .project-list-image { display: block; }
-        }
+    .no-touch &:hover {
+        a {	color: $white; }
+        .project-list-title { border-bottom-color: $white; }
+        .project-list-image { display: block; }
     }
 
 }
@@ -49,7 +47,7 @@
 	text-overflow: ellipsis;
 
     @include breakpoint($breakpoint-s) {
-        @include adjust-font-size-to(48px);
+        @include adjust-font-size-to(52px);
         line-height: 1;
         max-width: 65%;
         margin-bottom: -8px;
@@ -63,12 +61,11 @@
     font-weight: 700;
 
     @include breakpoint($breakpoint-s) {
-        @include adjust-font-size-to(42px);
+        @include adjust-font-size-to(46px);
         max-width: 30%;
         padding-right: .5em;
         display: inline-block;
     }
-
 }
 
 .project-list-image {
