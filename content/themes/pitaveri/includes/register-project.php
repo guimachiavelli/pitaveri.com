@@ -26,7 +26,12 @@
                 'labels' => $labels,
                 'public' => true,
                 'menu_position' => 5,
-                'supports' => array('title', 'editor', 'thumbnail'),
+                'supports' => array(
+                    'title',
+                    'editor',
+                    'thumbnail',
+                    'custom-fields'
+                ),
 				'menu_icon' => 'dashicons-book-alt',
 				'rewrite' => array('slug' => 'project', 'with_front' => false)
             )

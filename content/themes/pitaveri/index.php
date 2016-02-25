@@ -7,10 +7,14 @@
     if (have_posts()) {
         while (have_posts()) {
         the_post();
+        $placeholder_colour = get_field('image_placeholder_colour');
+        if (!empty($placeholder_colour)) {
+            $placeholder_colour = "style='background-color: ${placeholder_colour}'";
+        }
 ?>
     <article class="main-content">
 
-        <figure class="detail project-image featured-image">
+    <figure class="detail project-image featured-image" <?php echo $placeholder_colour; ?>>
             <?php the_post_thumbnail('large'); ?>
         </figure>
 

@@ -78,4 +78,5 @@
     height: 100%;
     @include background-size(cover);
     background-repeat: no-repeat;
+    background-color: $default-img-bg;
 }
