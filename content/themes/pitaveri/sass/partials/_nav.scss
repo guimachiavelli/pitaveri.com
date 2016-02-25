@@ -11,7 +11,7 @@
     }
 }
 
-.primary-nav ul {
+.primary-nav__container {
     position: fixed;
     top: 0;
     z-index: 10;
@@ -39,14 +39,6 @@
     left: 15px;
     right: 15px;
 
-    &:last-child {
-        text-align: right;
-    }
-
-    &:nth-child(2n) {
-        text-align: left;
-    }
-
     a {
         position: relative;
         z-index: 1;
@@ -57,9 +49,18 @@
         text-align: left;
         left: 0;
         right: 0;
-
-        &:nth-child(2n) {
-            text-align: center;
-        }
     }
 }
+
+.menu-item--about {
+    text-align: right;
+}
+
+.menu-item--works {
+    text-align: left;
+
+    @include breakpoint($breakpoint-s) {
+        text-align: center;
+    }
+}
+

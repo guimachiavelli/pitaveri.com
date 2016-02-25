@@ -142,7 +142,7 @@
     width: 100%;
 
     @include breakpoint($breakpoint-s) {
-        padding: rhythm(16) 40px rhythm(8) 40px;
+        padding: rhythm(16) 40px rhythm(5) 40px;
     }
 }
 
@@ -155,6 +155,14 @@
         font-weight: inherit;
     }
 
+    &:before, &:after {
+        font-weight: 700;
+    }
+
+    &:before {
+        content: '‹';
+    }
+
     @include breakpoint($breakpoint-s) {
         @include adjust-font-size-to(22px);
     }
@@ -162,6 +170,15 @@
 
 .project-prev {
     text-align: right;
+
+    &:before {
+        content: '';
+    }
+
+    &:after {
+        content: '›';
+    }
+
 }
 
 .project-nav-link-text {

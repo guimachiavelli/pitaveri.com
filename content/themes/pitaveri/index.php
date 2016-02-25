@@ -30,7 +30,7 @@
             <?php if ($next_post) : ?>
                 <li class="project-nav-link project-next">
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
-                        ‹
+
                         <span class="project-nav-link-text">Next</span>
                         <span class="project-nav-link-title"><?php echo $next_post->post_title; ?></span>
                     </a>
@@ -42,7 +42,7 @@
                     <a href="<?php echo get_permalink($prev_post->ID); ?>">
                         <span class="project-nav-link-text">Prev</span>
                         <span class="project-nav-link-title"><?php echo $prev_post->post_title; ?></span>
-                        ›
+
                     </a>
                 </li>
             <?php endif; ?>
