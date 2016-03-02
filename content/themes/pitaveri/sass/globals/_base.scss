@@ -44,11 +44,11 @@ q {
 }
 
 ::-moz-selection {
-
+    background-color: yellow;
 }
 
 ::selection {
-
+    background-color: yellow;
 }
 
 .outline { display: none }

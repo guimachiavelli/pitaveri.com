@@ -2,60 +2,34 @@
     /* global $ */
     'use strict';
 
-    $.fn.isOnScreen = function(){
-        var $window, viewport = {}, bounds = {}, winHeight, elHeight;
+    function isElementOnScreen(el) {
+        var viewport = {}, bounds, winHeight, navHeight;
 
-        $window = $(window);
-        winHeight = $window.height();
-        elHeight = this.height();
+        winHeight = window.innerHeight;
+        navHeight = document.querySelector('.menu-item').clientHeight;
 
-        viewport.top = $window.scrollTop();
-        bounds.top = this.offset().top;
+        viewport.top = document.body.scrollTop;
+        bounds = el.getBoundingClientRect();
 
-        viewport.bottom = viewport.top + winHeight - elHeight + 170;
-        bounds.bottom = bounds.top + elHeight - 50;
+        viewport.bottom = viewport.top + winHeight;
 
-        return !(viewport.bottom < bounds.top || viewport.top > bounds.bottom);
-    };
+        return !(viewport.top < bounds.top + viewport.top - navHeight ||
+                 viewport.top > bounds.bottom + viewport.top - navHeight);
+    }
 
     var toggleMenuColor = function() {
-        if ($(document).scrollTop() < $('.detail').height() - 55) {
+        if ($(document).scrollTop() <= $('.detail')[0].clientHeight - 55) {
             $('.primary-nav').addClass('white');
             return;
         }
 
         $('.detail').each(function(){
-            if ($(this).isOnScreen()) {
+            if (isElementOnScreen(this)) {
                 $('.primary-nav').addClass('white');
                 return false;
             }
 
             $('.primary-nav').removeClass('white');
-        });
-    };
-
-    var imageCover = function($detail_img) {
-        var $image, imageSrc, srcIndex;
-        $detail_img.each(function(){
-            $image = $(this).find('img');
-            imageSrc = $image.attr('srcset');
-
-            if (typeof imageSrc !== 'undefined') {
-                imageSrc = imageSrc.split(', ');
-                srcIndex = window.devicePixelRatio > 1.5 ? 1 : 0;
-                imageSrc = imageSrc[srcIndex].split(' ')[0];
-            } else {
-                imageSrc = $image.attr('src');
-            }
-
-            $(this).attr('data-image', imageSrc).find('img').remove();
-        });
-
-        $detail_img.imageScroll({
-            coverRatio: 1,
-            speed: 0,
-            mediaWidth: 1400,
-            mediaHeight: 933
         });
     };
 
@@ -80,19 +54,18 @@
         });
     };
 
-
-    $(document).ready(function() {
+    function init() {
         if (!('ontouchstart' in window)) {
             $('html').addClass('no-touch');
-            //imageCover($('.detail'));
-            toggleMenuColor();
+
             if ($('body').hasClass('single') || $('body').hasClass('home')) {
-                $(document).on('scroll', function(){
-                    toggleMenuColor();
-                });
+                toggleMenuColor();
+                $(document).on('scroll', toggleMenuColor);
             }
         }
 
         projectListImage($('.project-list-image'));
-    });
+    }
+
+    $(document).ready(init);
 }());

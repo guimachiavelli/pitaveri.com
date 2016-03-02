@@ -22,12 +22,17 @@
         padding: 0;
 
         &:last-child {
-            qmargin-bottom: rhythm(5);
+            margin-bottom: rhythm(5);
         }
     }
 
     @include breakpoint($breakpoint-s) {
+        padding-right: 20%;
         margin: rhythm(4, 32px) 40px;
+    }
+
+    @include breakpoint($breakpoint-l) {
+        padding-right: 0;
     }
 
 }

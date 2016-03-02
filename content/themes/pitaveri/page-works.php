@@ -14,7 +14,11 @@
                     <header class="project-list-head">
                         <a href="<?php the_permalink(); ?>">
                             <time class="project-list-date"><?php the_time('Y/m'); ?></time>
-                            <h1 class="project-list-title"><?php the_title(); ?></h1>
+                            <h2 class="project-list-title">
+                                <b class="project-list-title-container">
+                                    <?php the_title(); ?>
+                                </b>
+                            </h2>
                         </a>
                     </header>
                     <figure class="project-list-image" <?php echo $placeholder_colour; ?>>
