@@ -22,7 +22,7 @@
 
     .no-touch &:hover {
         a {	color: $white; }
-        .project-list-title { border-bottom-color: $white; }
+        .project-list-title-container { border-bottom-color: $white; }
         .project-list-image { display: block; }
     }
 }
@@ -52,24 +52,15 @@
 
     @include breakpoint($breakpoint-s) {
         @include adjust-font-size-to(52px);
+        line-height: 1.2;
         display: table-cell;
         border: 0;
+        padding-bottom: 1px;
     }
-
 }
 
 .project-list-title-container {
     border-bottom: 1px solid $text-color;
-
-    :hover > & {
-        border-bottom: 0;
-    }
-
-    &:after {
-        content: '';
-        height: 2px;
-        display: block;
-    }
 }
 
 .project-list-date {
