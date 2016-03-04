@@ -61,6 +61,10 @@
 .project-list-title-container {
     border-bottom: 1px solid $text-color;
 
+    :hover > & {
+        border-bottom: 0;
+    }
+
     &:after {
         content: '';
         height: 2px;
