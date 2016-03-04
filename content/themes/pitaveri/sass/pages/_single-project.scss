@@ -187,13 +187,13 @@
 }
 
 .project-nav-link-text {
-    @include breakpoint($breakpoint-s) {
+    @include breakpoint($breakpoint-l) {
         display: none;
     }
 }
 
 .project-nav-link-title {
-    @include breakpoint(max-width $breakpoint-s) {
+    @include breakpoint(max-width $breakpoint-l) {
         display: none;
     }	
 }
