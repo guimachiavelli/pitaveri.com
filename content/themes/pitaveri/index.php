@@ -7,10 +7,6 @@
     if (have_posts()) {
         while (have_posts()) {
         the_post();
-        $placeholder_colour = get_field('image_placeholder_colour');
-        if (!empty($placeholder_colour)) {
-            $placeholder_colour = "style='background-color: ${placeholder_colour}'";
-        }
 ?>
     <article class="main-content">
 
@@ -20,7 +16,9 @@
 
         <h1 class="project-title">
             <?php the_title(); ?>
-            <time datetime="<?php the_time('Y-m') ?>"><?php the_time('Y/m') ?></time>
+            <time datetime="<?php the_time('Y-m') ?>">
+                <?php the_time('Y/m') ?>
+            </time>
         </h1>
 
         <?php the_content(); ?>
@@ -34,7 +32,6 @@
             <?php if ($next_post) : ?>
                 <li class="project-nav-link project-next">
                     <a href="<?php echo get_permalink($next_post->ID); ?>">
-
                         <span class="project-nav-link-text">Next</span>
                         <span class="project-nav-link-title"><?php echo $next_post->post_title; ?></span>
                     </a>
