@@ -1,5 +1,9 @@
 .main-content--page {
-    margin-top: rhythm(12);
+    margin-top: rhythm(8);
+
+    @include breakpoint($breakpoint-s) {
+        margin-top: rhythm(12);
+    }
 }
 
 .page-title {

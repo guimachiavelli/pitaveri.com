@@ -1,5 +1,9 @@
 .project-list {
-    margin-top: rhythm(10);
+    margin-top: rhythm(8);
+
+    @include breakpoint($breakpoint-s) {
+        margin-top: rhythm(12);
+    }
 }
 
 .project-list-item {
