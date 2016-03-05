@@ -2,7 +2,6 @@
 
 add_action('wp_enqueue_scripts', 'p_enqueue_scripts');
 add_action('wp_enqueue_scripts', 'p_enqueue_styles');
-add_action('the_post', 'p_add_post_placeholder_colour');
 
 function p_enqueue_styles() {
     wp_register_style('p-stylesheet', TEMPLATE_URL . '/css/pitaveri-main.css');
@@ -22,15 +21,4 @@ function p_enqueue_scripts() {
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('p-main');
-}
-
-function p_add_post_placeholder_colour() {
-    global $post;
-    $placeholder_colour = get_field('image_placeholder_colour', $post->ID);
-
-    if (empty($placeholder_colour)) {
-        return;
-    }
-
-    echo "<style> img { background-color: ${placeholder_colour}; }</style>";
 }

@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 
 <?php
-    $args = array_merge($wp_query->query_vars, array('post_type' => 'project', 'orderby' => 'rand', 'posts_per_page' => 1));
+    $args = array_merge($wp_query->query_vars,
+                        array('post_type' => 'project',
+                              'orderby' => 'rand',
+                              'posts_per_page' => 1));
     query_posts($args);
-
-    if (have_posts()) {
-        while (have_posts()) {
-        the_post();
 ?>
-    <article class="main-content">
 
-    <figure class="detail project-image featured-image" <?php echo $placeholder_colour; ?>>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <article class="main-content">
+        <?php p_echo_placeholder_colour_style($post->ID); ?>
+        <figure class="detail project-image featured-image">
             <?php the_post_thumbnail('large'); ?>
         </figure>
 
@@ -47,14 +48,8 @@
                     </a>
                 </li>
             <?php endif; ?>
-
-
         </footer>
-
     </article>
-<?php
-        }
-    }
-?>
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

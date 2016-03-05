@@ -34,13 +34,13 @@
     position: relative;
 
     p, .project-image {
+        @include box-sizing(border-box);
+        @include adjust-font-size-to(18px, 2.25);
         width: 100%;
         display: block;
         padding: 0 40px;
         font-weight: 700;
         margin-top: 40px;
-        @include box-sizing(border-box);
-        @include adjust-font-size-to(18px, 2.25);
 
         &:last-child {
             margin-bottom: rhythm(8);
@@ -106,6 +106,7 @@
             right: 0;
             bottom: 0;
             height: 100%;
+            width: auto;
         }
 
         @include breakpoint($breakpoint-s) {
@@ -117,11 +118,11 @@
             img {
                 @include translateX(0);
                 object-fit: cover;
-                object-position: 0;
+                object-position: top left;
+                width: 100%;
             }
         }
     }
-
 
     .detail + .detail {
         @include breakpoint($breakpoint-s) {
@@ -134,7 +135,6 @@
         height: auto;
         max-width: 100%;
     }
-
 }
 
 
@@ -187,7 +187,7 @@
 }
 
 .project-nav-link-text {
-    @include breakpoint($breakpoint-l) {
+    @include breakpoint($breakpoint-l + 1) {
         display: none;
     }
 }

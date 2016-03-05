@@ -22,7 +22,7 @@
 
     .no-touch &:hover {
         a {	color: $white; }
-        .project-list-title-container { border-bottom-color: $white; }
+        .project-list-title-container { border-bottom-color: transparent; }
         .project-list-image { display: block; }
     }
 }
@@ -87,4 +87,5 @@
     @include background-size(cover);
     background-repeat: no-repeat;
     background-color: $default-img-bg;
+    background-position: top left;
 }
