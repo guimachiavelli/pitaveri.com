@@ -2,7 +2,7 @@
 
 add_action('wp_enqueue_scripts', 'p_enqueue_scripts');
 add_action('wp_enqueue_scripts', 'p_enqueue_styles');
-add_action('wp_head', 'p_add_post_placeholder_colour');
+add_action('the_post', 'p_add_post_placeholder_colour');
 
 function p_enqueue_styles() {
     wp_register_style('p-stylesheet', TEMPLATE_URL . '/css/pitaveri-main.css');
