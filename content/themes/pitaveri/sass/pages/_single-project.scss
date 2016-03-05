@@ -107,6 +107,7 @@
             bottom: 0;
             height: 100%;
             width: auto;
+            max-width: none;
         }
 
         @include breakpoint($breakpoint-s) {
