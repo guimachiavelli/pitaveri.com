@@ -19,8 +19,8 @@ p {
 }
 
 a {
-    @include transition-property(color);
-    @include transition-duration(.1s);
+    @include transition-property(color, border-color);
+    @include transition-duration(100ms);
     color: $link-color;
     text-decoration: none;
     display: inline-block;

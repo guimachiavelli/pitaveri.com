@@ -2,6 +2,9 @@
     /* global $ */
     'use strict';
 
+    var lastResize = 0,
+        lastScroll = 0;
+
     function isElementOnScreen(el) {
         var viewport = {}, bounds, winHeight, navHeight;
 
@@ -54,17 +57,47 @@
         });
     };
 
+    function setupMenuColorToggling() {
+        var now = new Date().getTime();
+
+        if (window.innerHeight < 576 || now - lastScroll < 100) {
+            return;
+        }
+
+        toggleMenuColor();
+        $(document).on('scroll', toggleMenuColor);
+
+        lastScroll = now;
+    }
+
+    function onResize() {
+        var now = new Date().getTime();
+
+        if (now - lastResize < 200) {
+            return;
+        }
+
+        $(document).off('scroll', toggleMenuColor);
+        setupMenuColorToggling();
+
+        lastResize = now;
+    }
+
     function init() {
         if (!('ontouchstart' in window)) {
             $('html').addClass('no-touch');
+        }
 
-            if ($('body').hasClass('single') || $('body').hasClass('home')) {
-                toggleMenuColor();
-                $(document).on('scroll', toggleMenuColor);
-            }
+        if (window.innerHeight < 576) {
+            return;
+        }
+
+        if ($('body').hasClass('single') || $('body').hasClass('home')) {
+            setupMenuColorToggling();
         }
 
         projectListImage($('.project-list-image'));
+        $(document).on('resize', onResize);
     }
 
     $(document).ready(init);
