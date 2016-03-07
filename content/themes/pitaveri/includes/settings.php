@@ -12,6 +12,7 @@
 	add_action('init', 'p_remove_taxonomies');
 
 	function p_post_image_defaults() {
+        add_image_size('pitaveri-medium', 1000, 0, false);
 		update_option('image_default_link_type', 'none');
 		update_option('image_default_size', 'large');
 		update_option('large_size_w', 1400);

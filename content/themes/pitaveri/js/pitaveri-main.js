@@ -36,17 +36,50 @@
         });
     };
 
+    function retinaImage(imageUrl) {
+        var extension, extensionIndex, extensionlessImage;
+
+        extensionIndex = imageUrl.lastIndexOf('.');
+        extension = imageUrl.substr(extensionIndex);
+        extensionlessImage = imageUrl.substr(0,
+                                             imageUrl.length - extension.length);
+
+        return extensionlessImage + '@2x' + extension;
+    }
+
+    function pickedImageSrc(imageSrcs) {
+        var i, len, imageSrc, innerWidth, pixelRatio, biggestImage;
+
+        innerWidth = window.innerWidth;
+        pixelRatio = window.devicePixelRatio;
+
+        for (i = 0, len = imageSrcs.length; i < len; i += 1) {
+            imageSrc = imageSrcs[i].split(' ');
+            biggestImage = imageSrc;
+
+            if (parseInt(imageSrc[1], 10) < innerWidth * pixelRatio) {
+                continue;
+            }
+
+            return imageSrc[0];
+        }
+
+        if (pixelRatio !== 1) {
+            biggestImage[0] = retinaImage(biggestImage[0]);
+        }
+
+        return biggestImage[0];
+    }
+
     var projectListImage = function($detail_img) {
-        var $image, imageSrc, srcIndex;
+        var $image, imageSrc;
 
         $detail_img.each(function(){
-            $image = $(this).find('img'),
+            $image = $(this).find('img');
             imageSrc = $image.attr('srcset');
 
             if (typeof imageSrc !== 'undefined') {
-                imageSrc = imageSrc.split(', ');
-                srcIndex = window.devicePixelRatio > 1.5 ? 1 : 0;
-                imageSrc = imageSrc[srcIndex].split(' ')[0];
+                imageSrc = pickedImageSrc(imageSrc.split(', '));
             } else {
                 imageSrc = $image.attr('src');
             }
@@ -88,7 +121,7 @@
             $('html').addClass('no-touch');
         }
 
-        if (window.innerHeight < 576) {
+        if (window.innerWidth < 576) {
             return;
         }
 
@@ -98,6 +131,7 @@
 
         projectListImage($('.project-list-image'));
         $(document).on('resize', onResize);
+
     }
 
     $(document).ready(init);
